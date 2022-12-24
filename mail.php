@@ -13,7 +13,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 # construct email
 
 $to = "michelleddavies4@gmail.com";
-$subject = $_POST["contact-select"];
+$subject = $_POST["inquiry"];
 $content = $_POST["message"];
 
 $message = "
