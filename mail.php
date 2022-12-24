@@ -14,24 +14,18 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 $to = "michelleddavies4@gmail.com";
 $subject = $_POST["contact-select"];
+$content = $_POST["message"];
 
 $message = "
 <html>
 <head>
-<title>HTML email</title>
+<title>New message from my portfolio website!</title>
 </head>
 <body>
-<p>This email contains HTML Tags!</p>
-<table>
-<tr>
-<th>Firstname</th>
-<th>Lastname</th>
-</tr>
-<tr>
-<td>John</td>
-<td>Doe</td>
-</tr>
-</table>
+<p>Name: $name</p>
+<p>Email: $email</p>
+<p>Subject: $subject</p>
+<p>Message: <br>$content<br></p>
 </body>
 </html>
 ";
