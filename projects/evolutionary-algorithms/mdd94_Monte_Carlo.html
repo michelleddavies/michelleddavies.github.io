@@ -1,0 +1,505 @@
+
+<!-- saved from url=(0051)file:///Users/michelledavies/mdd94_monte_carlo.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title> 
+mdd94 Monte Carlo            </title>
+</head> <body><h1>ECE 4271, Spring 2022 Monte Carlo Programming Assignment</h1>           
+<h2> Created by Michelle Davies '22 (mdd94) </h2> 
+<p><i>Monte Carlo Programming Assignment, ECE 4271 Spring 2022 
+Michelle Davies (mdd94) Monte Carlo - Metropolis Implementation.</i>
+
+This is the file which verifies, interprets, reports and returns a data report on the runs done on the class in mdd94_monte_carlo.py.
+
+The plan is to run 3 trials for each N runs (N=10000, N=50000 and N=100000) and analyze how those results compare. Then, there will be a 4th trial for each N runs where instead of looking at the nine nearest neighbors, we will look at step sizes / offsets of 1 and 2.</p>
+ <p>In each trial, we will get the results of the Monte Carlo runs and compare them to the SLLN approach as well as what we expect from the Metropolic algorithm.</p>
+<h1>Monte Carlo Program for N=10000 runs, Sample Size of 10000</h1>
+<h2>Trial 1 Results: </h2>
+<p>The neighbors of state (2, 49) are [(1, 50), (2, 50), (3, 50), (1, 49), (2, 49), (3, 49), (1, 48), (2, 48), (3, 48)]</p>
+<p>The neighbors of state (3, 50) are [(2, 51), (3, 51), (4, 51), (2, 50), (3, 50), (4, 50), (2, 49), (3, 49), (4, 49)]</p>
+<p>The neighbors of state (4, 50) are [(3, 51), (4, 51), (5, 51), (3, 50), (4, 50), (5, 50), (3, 49), (4, 49), (5, 49)]</p>
+<p>The neighbors of state (5, 50) are [(4, 51), (5, 51), (6, 51), (4, 50), (5, 50), (6, 50), (4, 49), (5, 49), (6, 49)]</p>
+<p>The neighbors of state (6, 50) are [(5, 51), (6, 51), (7, 51), (5, 50), (6, 50), (7, 50), (5, 49), (6, 49), (7, 49)]</p>
+<p>The neighbors of state (7, 50) are [(6, 51), (7, 51), (8, 51), (6, 50), (7, 50), (8, 50), (6, 49), (7, 49), (8, 49)]</p>
+<p>The neighbors of state (8, 50) are [(7, 51), (8, 51), (9, 51), (7, 50), (8, 50), (9, 50), (7, 49), (8, 49), (9, 49)]</p>
+<p>The neighbors of state (9, 50) are [(8, 51), (9, 51), (10, 51), (8, 50), (9, 50), (10, 50), (8, 49), (9, 49), (10, 49)]</p>
+<p>The neighbors of state (10, 50) are [(9, 51), (10, 51), (11, 51), (9, 50), (10, 50), (11, 50), (9, 49), (10, 49), (11, 49)]</p>
+<p>The neighbors of state (11, 50) are [(10, 51), (11, 51), (12, 51), (10, 50), (11, 50), (12, 50), (10, 49), (11, 49), (12, 49)]</p>
+<p>The neighbors of state (12, 50) are [(11, 51), (12, 51), (13, 51), (11, 50), (12, 50), (13, 50), (11, 49), (12, 49), (13, 49)]</p>
+<p>The neighbors of state (13, 50) are [(12, 51), (13, 51), (14, 51), (12, 50), (13, 50), (14, 50), (12, 49), (13, 49), (14, 49)]</p>
+<p>The neighbors of state (14, 50) are [(13, 51), (14, 51), (15, 51), (13, 50), (14, 50), (15, 50), (13, 49), (14, 49), (15, 49)]</p>
+<p>The neighbors of state (15, 50) are [(14, 51), (15, 51), (16, 51), (14, 50), (15, 50), (16, 50), (14, 49), (15, 49), (16, 49)]</p>
+<p>The neighbors of state (16, 50) are [(15, 51), (16, 51), (17, 51), (15, 50), (16, 50), (17, 50), (15, 49), (16, 49), (17, 49)]</p>
+<p>The neighbors of state (17, 50) are [(16, 51), (17, 51), (18, 51), (16, 50), (17, 50), (18, 50), (16, 49), (17, 49), (18, 49)]</p>
+<p>The neighbors of state (18, 50) are [(17, 51), (18, 51), (19, 51), (17, 50), (18, 50), (19, 50), (17, 49), (18, 49), (19, 49)]</p>
+<p>The neighbors of state (19, 50) are [(18, 51), (19, 51), (20, 51), (18, 50), (19, 50), (20, 50), (18, 49), (19, 49), (20, 49)]</p>
+<p>The neighbors of state (20, 50) are [(19, 51), (20, 51), (21, 51), (19, 50), (20, 50), (21, 50), (19, 49), (20, 49), (21, 49)]</p>
+<p>The neighbors of state (21, 50) are [(20, 51), (21, 51), (22, 51), (20, 50), (21, 50), (22, 50), (20, 49), (21, 49), (22, 49)]</p>
+<p>The neighbors of state (22, 50) are [(21, 51), (22, 51), (23, 51), (21, 50), (22, 50), (23, 50), (21, 49), (22, 49), (23, 49)]</p>
+<p>The neighbors of state (23, 50) are [(22, 51), (23, 51), (24, 51), (22, 50), (23, 50), (24, 50), (22, 49), (23, 49), (24, 49)]</p>
+<p>The neighbors of state (24, 50) are [(23, 51), (24, 51), (25, 51), (23, 50), (24, 50), (25, 50), (23, 49), (24, 49), (25, 49)]</p>
+<p>The neighbors of state (25, 50) are [(24, 51), (25, 51), (26, 51), (24, 50), (25, 50), (26, 50), (24, 49), (25, 49), (26, 49)]</p>
+<p>The neighbors of state (26, 50) are [(25, 51), (26, 51), (27, 51), (25, 50), (26, 50), (27, 50), (25, 49), (26, 49), (27, 49)]</p>
+<p>The neighbors of state (27, 50) are [(26, 51), (27, 51), (28, 51), (26, 50), (27, 50), (28, 50), (26, 49), (27, 49), (28, 49)]</p>
+<p>The neighbors of state (28, 50) are [(27, 51), (28, 51), (29, 51), (27, 50), (28, 50), (29, 50), (27, 49), (28, 49), (29, 49)]</p>
+<p>The neighbors of state (29, 50) are [(28, 51), (29, 51), (30, 51), (28, 50), (29, 50), (30, 50), (28, 49), (29, 49), (30, 49)]</p>
+<p>The neighbors of state (30, 50) are [(29, 51), (30, 51), (31, 51), (29, 50), (30, 50), (31, 50), (29, 49), (30, 49), (31, 49)]</p>
+<p>The neighbors of state (31, 50) are [(30, 51), (31, 51), (32, 51), (30, 50), (31, 50), (32, 50), (30, 49), (31, 49), (32, 49)]</p>
+<p>The neighbors of state (32, 50) are [(31, 51), (32, 51), (33, 51), (31, 50), (32, 50), (33, 50), (31, 49), (32, 49), (33, 49)]</p>
+<p>The neighbors of state (33, 50) are [(32, 51), (33, 51), (34, 51), (32, 50), (33, 50), (34, 50), (32, 49), (33, 49), (34, 49)]</p>
+<p>The neighbors of state (34, 50) are [(33, 51), (34, 51), (35, 51), (33, 50), (34, 50), (35, 50), (33, 49), (34, 49), (35, 49)]</p>
+<p>The neighbors of state (35, 50) are [(34, 51), (35, 51), (36, 51), (34, 50), (35, 50), (36, 50), (34, 49), (35, 49), (36, 49)]</p>
+<p>The neighbors of state (36, 50) are [(35, 51), (36, 51), (37, 51), (35, 50), (36, 50), (37, 50), (35, 49), (36, 49), (37, 49)]</p>
+<p>The neighbors of state (37, 50) are [(36, 51), (37, 51), (38, 51), (36, 50), (37, 50), (38, 50), (36, 49), (37, 49), (38, 49)]</p>
+<p>The neighbors of state (38, 50) are [(37, 51), (38, 51), (39, 51), (37, 50), (38, 50), (39, 50), (37, 49), (38, 49), (39, 49)]</p>
+<p>The neighbors of state (39, 50) are [(38, 51), (39, 51), (40, 51), (38, 50), (39, 50), (40, 50), (38, 49), (39, 49), (40, 49)]</p>
+<p>The neighbors of state (40, 50) are [(39, 51), (40, 51), (41, 51), (39, 50), (40, 50), (41, 50), (39, 49), (40, 49), (41, 49)]</p>
+<p>The neighbors of state (41, 50) are [(40, 51), (41, 51), (42, 51), (40, 50), (41, 50), (42, 50), (40, 49), (41, 49), (42, 49)]</p>
+<p>The neighbors of state (42, 50) are [(41, 51), (42, 51), (43, 51), (41, 50), (42, 50), (43, 50), (41, 49), (42, 49), (43, 49)]</p>
+<p>The neighbors of state (43, 50) are [(42, 51), (43, 51), (44, 51), (42, 50), (43, 50), (44, 50), (42, 49), (43, 49), (44, 49)]</p>
+<p>The neighbors of state (44, 50) are [(43, 51), (44, 51), (45, 51), (43, 50), (44, 50), (45, 50), (43, 49), (44, 49), (45, 49)]</p>
+<p>The neighbors of state (45, 50) are [(44, 51), (45, 51), (46, 51), (44, 50), (45, 50), (46, 50), (44, 49), (45, 49), (46, 49)]</p>
+<p>The neighbors of state (46, 50) are [(45, 51), (46, 51), (47, 51), (45, 50), (46, 50), (47, 50), (45, 49), (46, 49), (47, 49)]</p>
+<p>The neighbors of state (47, 50) are [(46, 51), (47, 51), (48, 51), (46, 50), (47, 50), (48, 50), (46, 49), (47, 49), (48, 49)]</p>
+<p>The neighbors of state (48, 50) are [(47, 51), (48, 51), (49, 51), (47, 50), (48, 50), (49, 50), (47, 49), (48, 49), (49, 49)]</p>
+<p>The neighbors of state (49, 50) are [(48, 51), (49, 51), (50, 51), (48, 50), (49, 50), (50, 50), (48, 49), (49, 49), (50, 49)]</p>
+<p>The neighbors of state (50, 50) are [(49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 76.46</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_10000_(1)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_10000_(1)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 22.62 seconds</i></p>
+<p></p>
+<h2>Trial 2 Results: </h2>
+<p>The neighbors of state (74, 88) are [(73, 89), (74, 89), (75, 89), (73, 88), (74, 88), (75, 88), (73, 87), (74, 87), (75, 87)]</p>
+<p>The neighbors of state (73, 87) are [(72, 88), (73, 88), (74, 88), (72, 87), (73, 87), (74, 87), (72, 86), (73, 86), (74, 86)]</p>
+<p>The neighbors of state (72, 86) are [(71, 87), (72, 87), (73, 87), (71, 86), (72, 86), (73, 86), (71, 85), (72, 85), (73, 85)]</p>
+<p>The neighbors of state (71, 85) are [(70, 86), (71, 86), (72, 86), (70, 85), (71, 85), (72, 85), (70, 84), (71, 84), (72, 84)]</p>
+<p>The neighbors of state (70, 84) are [(69, 85), (70, 85), (71, 85), (69, 84), (70, 84), (71, 84), (69, 83), (70, 83), (71, 83)]</p>
+<p>The neighbors of state (69, 83) are [(68, 84), (69, 84), (70, 84), (68, 83), (69, 83), (70, 83), (68, 82), (69, 82), (70, 82)]</p>
+<p>The neighbors of state (68, 82) are [(67, 83), (68, 83), (69, 83), (67, 82), (68, 82), (69, 82), (67, 81), (68, 81), (69, 81)]</p>
+<p>The neighbors of state (67, 81) are [(66, 82), (67, 82), (68, 82), (66, 81), (67, 81), (68, 81), (66, 80), (67, 80), (68, 80)]</p>
+<p>The neighbors of state (66, 80) are [(65, 81), (66, 81), (67, 81), (65, 80), (66, 80), (67, 80), (65, 79), (66, 79), (67, 79)]</p>
+<p>The neighbors of state (65, 79) are [(64, 80), (65, 80), (66, 80), (64, 79), (65, 79), (66, 79), (64, 78), (65, 78), (66, 78)]</p>
+<p>The neighbors of state (64, 78) are [(63, 79), (64, 79), (65, 79), (63, 78), (64, 78), (65, 78), (63, 77), (64, 77), (65, 77)]</p>
+<p>The neighbors of state (63, 77) are [(62, 78), (63, 78), (64, 78), (62, 77), (63, 77), (64, 77), (62, 76), (63, 76), (64, 76)]</p>
+<p>The neighbors of state (62, 76) are [(61, 77), (62, 77), (63, 77), (61, 76), (62, 76), (63, 76), (61, 75), (62, 75), (63, 75)]</p>
+<p>The neighbors of state (61, 75) are [(60, 76), (61, 76), (62, 76), (60, 75), (61, 75), (62, 75), (60, 74), (61, 74), (62, 74)]</p>
+<p>The neighbors of state (60, 74) are [(59, 75), (60, 75), (61, 75), (59, 74), (60, 74), (61, 74), (59, 73), (60, 73), (61, 73)]</p>
+<p>The neighbors of state (59, 73) are [(58, 74), (59, 74), (60, 74), (58, 73), (59, 73), (60, 73), (58, 72), (59, 72), (60, 72)]</p>
+<p>The neighbors of state (58, 72) are [(57, 73), (58, 73), (59, 73), (57, 72), (58, 72), (59, 72), (57, 71), (58, 71), (59, 71)]</p>
+<p>The neighbors of state (57, 71) are [(56, 72), (57, 72), (58, 72), (56, 71), (57, 71), (58, 71), (56, 70), (57, 70), (58, 70)]</p>
+<p>The neighbors of state (56, 70) are [(55, 71), (56, 71), (57, 71), (55, 70), (56, 70), (57, 70), (55, 69), (56, 69), (57, 69)]</p>
+<p>The neighbors of state (55, 69) are [(54, 70), (55, 70), (56, 70), (54, 69), (55, 69), (56, 69), (54, 68), (55, 68), (56, 68)]</p>
+<p>The neighbors of state (54, 68) are [(53, 69), (54, 69), (55, 69), (53, 68), (54, 68), (55, 68), (53, 67), (54, 67), (55, 67)]</p>
+<p>The neighbors of state (53, 67) are [(52, 68), (53, 68), (54, 68), (52, 67), (53, 67), (54, 67), (52, 66), (53, 66), (54, 66)]</p>
+<p>The neighbors of state (52, 66) are [(51, 67), (52, 67), (53, 67), (51, 66), (52, 66), (53, 66), (51, 65), (52, 65), (53, 65)]</p>
+<p>The neighbors of state (51, 65) are [(50, 66), (51, 66), (52, 66), (50, 65), (51, 65), (52, 65), (50, 64), (51, 64), (52, 64)]</p>
+<p>The neighbors of state (50, 64) are [(49, 65), (50, 65), (51, 65), (49, 64), (50, 64), (51, 64), (49, 63), (50, 63), (51, 63)]</p>
+<p>The neighbors of state (50, 63) are [(49, 64), (50, 64), (51, 64), (49, 63), (50, 63), (51, 63), (49, 62), (50, 62), (51, 62)]</p>
+<p>The neighbors of state (50, 62) are [(49, 63), (50, 63), (51, 63), (49, 62), (50, 62), (51, 62), (49, 61), (50, 61), (51, 61)]</p>
+<p>The neighbors of state (50, 61) are [(49, 62), (50, 62), (51, 62), (49, 61), (50, 61), (51, 61), (49, 60), (50, 60), (51, 60)]</p>
+<p>The neighbors of state (50, 60) are [(49, 61), (50, 61), (51, 61), (49, 60), (50, 60), (51, 60), (49, 59), (50, 59), (51, 59)]</p>
+<p>The neighbors of state (50, 59) are [(49, 60), (50, 60), (51, 60), (49, 59), (50, 59), (51, 59), (49, 58), (50, 58), (51, 58)]</p>
+<p>The neighbors of state (50, 58) are [(49, 59), (50, 59), (51, 59), (49, 58), (50, 58), (51, 58), (49, 57), (50, 57), (51, 57)]</p>
+<p>The neighbors of state (50, 57) are [(49, 58), (50, 58), (51, 58), (49, 57), (50, 57), (51, 57), (49, 56), (50, 56), (51, 56)]</p>
+<p>The neighbors of state (50, 56) are [(49, 57), (50, 57), (51, 57), (49, 56), (50, 56), (51, 56), (49, 55), (50, 55), (51, 55)]</p>
+<p>The neighbors of state (50, 55) are [(49, 56), (50, 56), (51, 56), (49, 55), (50, 55), (51, 55), (49, 54), (50, 54), (51, 54)]</p>
+<p>The neighbors of state (50, 54) are [(49, 55), (50, 55), (51, 55), (49, 54), (50, 54), (51, 54), (49, 53), (50, 53), (51, 53)]</p>
+<p>The neighbors of state (50, 53) are [(49, 54), (50, 54), (51, 54), (49, 53), (50, 53), (51, 53), (49, 52), (50, 52), (51, 52)]</p>
+<p>The neighbors of state (50, 52) are [(49, 53), (50, 53), (51, 53), (49, 52), (50, 52), (51, 52), (49, 51), (50, 51), (51, 51)]</p>
+<p>The neighbors of state (50, 51) are [(49, 52), (50, 52), (51, 52), (49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50)]</p>
+<p>The neighbors of state (50, 50) are [(49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 126.025</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_10000_(2)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_10000_(2)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 23.01 seconds</i></p>
+<p></p>
+<h2>Trial 3 Results: </h2>
+<p>The neighbors of state (70, 70) are [(69, 71), (70, 71), (71, 71), (69, 70), (70, 70), (71, 70), (69, 69), (70, 69), (71, 69)]</p>
+<p>The neighbors of state (69, 69) are [(68, 70), (69, 70), (70, 70), (68, 69), (69, 69), (70, 69), (68, 68), (69, 68), (70, 68)]</p>
+<p>The neighbors of state (68, 68) are [(67, 69), (68, 69), (69, 69), (67, 68), (68, 68), (69, 68), (67, 67), (68, 67), (69, 67)]</p>
+<p>The neighbors of state (67, 67) are [(66, 68), (67, 68), (68, 68), (66, 67), (67, 67), (68, 67), (66, 66), (67, 66), (68, 66)]</p>
+<p>The neighbors of state (66, 66) are [(65, 67), (66, 67), (67, 67), (65, 66), (66, 66), (67, 66), (65, 65), (66, 65), (67, 65)]</p>
+<p>The neighbors of state (65, 65) are [(64, 66), (65, 66), (66, 66), (64, 65), (65, 65), (66, 65), (64, 64), (65, 64), (66, 64)]</p>
+<p>The neighbors of state (64, 64) are [(63, 65), (64, 65), (65, 65), (63, 64), (64, 64), (65, 64), (63, 63), (64, 63), (65, 63)]</p>
+<p>The neighbors of state (63, 63) are [(62, 64), (63, 64), (64, 64), (62, 63), (63, 63), (64, 63), (62, 62), (63, 62), (64, 62)]</p>
+<p>The neighbors of state (62, 62) are [(61, 63), (62, 63), (63, 63), (61, 62), (62, 62), (63, 62), (61, 61), (62, 61), (63, 61)]</p>
+<p>The neighbors of state (61, 61) are [(60, 62), (61, 62), (62, 62), (60, 61), (61, 61), (62, 61), (60, 60), (61, 60), (62, 60)]</p>
+<p>The neighbors of state (60, 60) are [(59, 61), (60, 61), (61, 61), (59, 60), (60, 60), (61, 60), (59, 59), (60, 59), (61, 59)]</p>
+<p>The neighbors of state (59, 59) are [(58, 60), (59, 60), (60, 60), (58, 59), (59, 59), (60, 59), (58, 58), (59, 58), (60, 58)]</p>
+<p>The neighbors of state (58, 58) are [(57, 59), (58, 59), (59, 59), (57, 58), (58, 58), (59, 58), (57, 57), (58, 57), (59, 57)]</p>
+<p>The neighbors of state (57, 57) are [(56, 58), (57, 58), (58, 58), (56, 57), (57, 57), (58, 57), (56, 56), (57, 56), (58, 56)]</p>
+<p>The neighbors of state (56, 56) are [(55, 57), (56, 57), (57, 57), (55, 56), (56, 56), (57, 56), (55, 55), (56, 55), (57, 55)]</p>
+<p>The neighbors of state (55, 55) are [(54, 56), (55, 56), (56, 56), (54, 55), (55, 55), (56, 55), (54, 54), (55, 54), (56, 54)]</p>
+<p>The neighbors of state (54, 54) are [(53, 55), (54, 55), (55, 55), (53, 54), (54, 54), (55, 54), (53, 53), (54, 53), (55, 53)]</p>
+<p>The neighbors of state (53, 53) are [(52, 54), (53, 54), (54, 54), (52, 53), (53, 53), (54, 53), (52, 52), (53, 52), (54, 52)]</p>
+<p>The neighbors of state (52, 52) are [(51, 53), (52, 53), (53, 53), (51, 52), (52, 52), (53, 52), (51, 51), (52, 51), (53, 51)]</p>
+<p>The neighbors of state (51, 51) are [(50, 52), (51, 52), (52, 52), (50, 51), (51, 51), (52, 51), (50, 50), (51, 50), (52, 50)]</p>
+<p>The neighbors of state (50, 50) are [(49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 120.0</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_10000_(3)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_10000_(3)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 22.71 seconds</i></p>
+<p></p>
+<h2>Trial 4 Results: </h2>
+<p>The neighbors of state (67, 67) are [(65, 69), (67, 69), (69, 69), (65, 67), (67, 67), (69, 67), (65, 65), (67, 65), (69, 65)]</p>
+<p>The neighbors of state (65, 65) are [(63, 67), (65, 67), (67, 67), (63, 65), (65, 65), (67, 65), (63, 63), (65, 63), (67, 63)]</p>
+<p>The neighbors of state (63, 63) are [(61, 65), (63, 65), (65, 65), (61, 63), (63, 63), (65, 63), (61, 61), (63, 61), (65, 61)]</p>
+<p>The neighbors of state (61, 61) are [(59, 63), (61, 63), (63, 63), (59, 61), (61, 61), (63, 61), (59, 59), (61, 59), (63, 59)]</p>
+<p>The neighbors of state (59, 59) are [(57, 61), (59, 61), (61, 61), (57, 59), (59, 59), (61, 59), (57, 57), (59, 57), (61, 57)]</p>
+<p>The neighbors of state (57, 57) are [(55, 59), (57, 59), (59, 59), (55, 57), (57, 57), (59, 57), (55, 55), (57, 55), (59, 55)]</p>
+<p>The neighbors of state (55, 55) are [(53, 57), (55, 57), (57, 57), (53, 55), (55, 55), (57, 55), (53, 53), (55, 53), (57, 53)]</p>
+<p>The neighbors of state (53, 53) are [(51, 55), (53, 55), (55, 55), (51, 53), (53, 53), (55, 53), (51, 51), (53, 51), (55, 51)]</p>
+<p>The neighbors of state (51, 51) are [(49, 53), (51, 53), (53, 53), (49, 51), (51, 51), (53, 51), (49, 49), (51, 49), (53, 49)]</p>
+<p>The neighbors of state (51, 49) are [(49, 51), (51, 51), (53, 51), (49, 49), (51, 49), (53, 49), (49, 47), (51, 47), (53, 47)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 76.46</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_10000_(4)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_10000_(4)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 22.92 seconds</i></p>
+<p></p>
+<h1>Monte Carlo Program for N=50000 runs, Sample Size of 50000</h1>
+<h2>Trial 1 Results: </h2>
+<p>The neighbors of state (75, 25) are [(74, 26), (75, 26), (76, 26), (74, 25), (75, 25), (76, 25), (74, 24), (75, 24), (76, 24)]</p>
+<p>The neighbors of state (74, 26) are [(73, 27), (74, 27), (75, 27), (73, 26), (74, 26), (75, 26), (73, 25), (74, 25), (75, 25)]</p>
+<p>The neighbors of state (73, 27) are [(72, 28), (73, 28), (74, 28), (72, 27), (73, 27), (74, 27), (72, 26), (73, 26), (74, 26)]</p>
+<p>The neighbors of state (72, 28) are [(71, 29), (72, 29), (73, 29), (71, 28), (72, 28), (73, 28), (71, 27), (72, 27), (73, 27)]</p>
+<p>The neighbors of state (71, 29) are [(70, 30), (71, 30), (72, 30), (70, 29), (71, 29), (72, 29), (70, 28), (71, 28), (72, 28)]</p>
+<p>The neighbors of state (70, 30) are [(69, 31), (70, 31), (71, 31), (69, 30), (70, 30), (71, 30), (69, 29), (70, 29), (71, 29)]</p>
+<p>The neighbors of state (69, 31) are [(68, 32), (69, 32), (70, 32), (68, 31), (69, 31), (70, 31), (68, 30), (69, 30), (70, 30)]</p>
+<p>The neighbors of state (68, 32) are [(67, 33), (68, 33), (69, 33), (67, 32), (68, 32), (69, 32), (67, 31), (68, 31), (69, 31)]</p>
+<p>The neighbors of state (67, 33) are [(66, 34), (67, 34), (68, 34), (66, 33), (67, 33), (68, 33), (66, 32), (67, 32), (68, 32)]</p>
+<p>The neighbors of state (66, 34) are [(65, 35), (66, 35), (67, 35), (65, 34), (66, 34), (67, 34), (65, 33), (66, 33), (67, 33)]</p>
+<p>The neighbors of state (65, 35) are [(64, 36), (65, 36), (66, 36), (64, 35), (65, 35), (66, 35), (64, 34), (65, 34), (66, 34)]</p>
+<p>The neighbors of state (64, 36) are [(63, 37), (64, 37), (65, 37), (63, 36), (64, 36), (65, 36), (63, 35), (64, 35), (65, 35)]</p>
+<p>The neighbors of state (63, 37) are [(62, 38), (63, 38), (64, 38), (62, 37), (63, 37), (64, 37), (62, 36), (63, 36), (64, 36)]</p>
+<p>The neighbors of state (62, 38) are [(61, 39), (62, 39), (63, 39), (61, 38), (62, 38), (63, 38), (61, 37), (62, 37), (63, 37)]</p>
+<p>The neighbors of state (61, 39) are [(60, 40), (61, 40), (62, 40), (60, 39), (61, 39), (62, 39), (60, 38), (61, 38), (62, 38)]</p>
+<p>The neighbors of state (60, 40) are [(59, 41), (60, 41), (61, 41), (59, 40), (60, 40), (61, 40), (59, 39), (60, 39), (61, 39)]</p>
+<p>The neighbors of state (59, 41) are [(58, 42), (59, 42), (60, 42), (58, 41), (59, 41), (60, 41), (58, 40), (59, 40), (60, 40)]</p>
+<p>The neighbors of state (58, 42) are [(57, 43), (58, 43), (59, 43), (57, 42), (58, 42), (59, 42), (57, 41), (58, 41), (59, 41)]</p>
+<p>The neighbors of state (57, 43) are [(56, 44), (57, 44), (58, 44), (56, 43), (57, 43), (58, 43), (56, 42), (57, 42), (58, 42)]</p>
+<p>The neighbors of state (56, 44) are [(55, 45), (56, 45), (57, 45), (55, 44), (56, 44), (57, 44), (55, 43), (56, 43), (57, 43)]</p>
+<p>The neighbors of state (55, 45) are [(54, 46), (55, 46), (56, 46), (54, 45), (55, 45), (56, 45), (54, 44), (55, 44), (56, 44)]</p>
+<p>The neighbors of state (54, 46) are [(53, 47), (54, 47), (55, 47), (53, 46), (54, 46), (55, 46), (53, 45), (54, 45), (55, 45)]</p>
+<p>The neighbors of state (53, 47) are [(52, 48), (53, 48), (54, 48), (52, 47), (53, 47), (54, 47), (52, 46), (53, 46), (54, 46)]</p>
+<p>The neighbors of state (52, 48) are [(51, 49), (52, 49), (53, 49), (51, 48), (52, 48), (53, 48), (51, 47), (52, 47), (53, 47)]</p>
+<p>The neighbors of state (51, 49) are [(50, 50), (51, 50), (52, 50), (50, 49), (51, 49), (52, 49), (50, 48), (51, 48), (52, 48)]</p>
+<p>The neighbors of state (50, 50) are [(49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 100.0</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_50000_(1)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_50000_(1)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 111.58 seconds</i></p>
+<p></p>
+<h2>Trial 2 Results: </h2>
+<p>The neighbors of state (24, 90) are [(23, 91), (24, 91), (25, 91), (23, 90), (24, 90), (25, 90), (23, 89), (24, 89), (25, 89)]</p>
+<p>The neighbors of state (25, 89) are [(24, 90), (25, 90), (26, 90), (24, 89), (25, 89), (26, 89), (24, 88), (25, 88), (26, 88)]</p>
+<p>The neighbors of state (26, 88) are [(25, 89), (26, 89), (27, 89), (25, 88), (26, 88), (27, 88), (25, 87), (26, 87), (27, 87)]</p>
+<p>The neighbors of state (27, 87) are [(26, 88), (27, 88), (28, 88), (26, 87), (27, 87), (28, 87), (26, 86), (27, 86), (28, 86)]</p>
+<p>The neighbors of state (28, 86) are [(27, 87), (28, 87), (29, 87), (27, 86), (28, 86), (29, 86), (27, 85), (28, 85), (29, 85)]</p>
+<p>The neighbors of state (29, 85) are [(28, 86), (29, 86), (30, 86), (28, 85), (29, 85), (30, 85), (28, 84), (29, 84), (30, 84)]</p>
+<p>The neighbors of state (30, 84) are [(29, 85), (30, 85), (31, 85), (29, 84), (30, 84), (31, 84), (29, 83), (30, 83), (31, 83)]</p>
+<p>The neighbors of state (31, 83) are [(30, 84), (31, 84), (32, 84), (30, 83), (31, 83), (32, 83), (30, 82), (31, 82), (32, 82)]</p>
+<p>The neighbors of state (32, 82) are [(31, 83), (32, 83), (33, 83), (31, 82), (32, 82), (33, 82), (31, 81), (32, 81), (33, 81)]</p>
+<p>The neighbors of state (33, 81) are [(32, 82), (33, 82), (34, 82), (32, 81), (33, 81), (34, 81), (32, 80), (33, 80), (34, 80)]</p>
+<p>The neighbors of state (34, 80) are [(33, 81), (34, 81), (35, 81), (33, 80), (34, 80), (35, 80), (33, 79), (34, 79), (35, 79)]</p>
+<p>The neighbors of state (35, 79) are [(34, 80), (35, 80), (36, 80), (34, 79), (35, 79), (36, 79), (34, 78), (35, 78), (36, 78)]</p>
+<p>The neighbors of state (36, 78) are [(35, 79), (36, 79), (37, 79), (35, 78), (36, 78), (37, 78), (35, 77), (36, 77), (37, 77)]</p>
+<p>The neighbors of state (37, 77) are [(36, 78), (37, 78), (38, 78), (36, 77), (37, 77), (38, 77), (36, 76), (37, 76), (38, 76)]</p>
+<p>The neighbors of state (38, 76) are [(37, 77), (38, 77), (39, 77), (37, 76), (38, 76), (39, 76), (37, 75), (38, 75), (39, 75)]</p>
+<p>The neighbors of state (39, 75) are [(38, 76), (39, 76), (40, 76), (38, 75), (39, 75), (40, 75), (38, 74), (39, 74), (40, 74)]</p>
+<p>The neighbors of state (40, 74) are [(39, 75), (40, 75), (41, 75), (39, 74), (40, 74), (41, 74), (39, 73), (40, 73), (41, 73)]</p>
+<p>The neighbors of state (41, 73) are [(40, 74), (41, 74), (42, 74), (40, 73), (41, 73), (42, 73), (40, 72), (41, 72), (42, 72)]</p>
+<p>The neighbors of state (42, 72) are [(41, 73), (42, 73), (43, 73), (41, 72), (42, 72), (43, 72), (41, 71), (42, 71), (43, 71)]</p>
+<p>The neighbors of state (43, 71) are [(42, 72), (43, 72), (44, 72), (42, 71), (43, 71), (44, 71), (42, 70), (43, 70), (44, 70)]</p>
+<p>The neighbors of state (44, 70) are [(43, 71), (44, 71), (45, 71), (43, 70), (44, 70), (45, 70), (43, 69), (44, 69), (45, 69)]</p>
+<p>The neighbors of state (45, 69) are [(44, 70), (45, 70), (46, 70), (44, 69), (45, 69), (46, 69), (44, 68), (45, 68), (46, 68)]</p>
+<p>The neighbors of state (46, 68) are [(45, 69), (46, 69), (47, 69), (45, 68), (46, 68), (47, 68), (45, 67), (46, 67), (47, 67)]</p>
+<p>The neighbors of state (47, 67) are [(46, 68), (47, 68), (48, 68), (46, 67), (47, 67), (48, 67), (46, 66), (47, 66), (48, 66)]</p>
+<p>The neighbors of state (48, 66) are [(47, 67), (48, 67), (49, 67), (47, 66), (48, 66), (49, 66), (47, 65), (48, 65), (49, 65)]</p>
+<p>The neighbors of state (49, 65) are [(48, 66), (49, 66), (50, 66), (48, 65), (49, 65), (50, 65), (48, 64), (49, 64), (50, 64)]</p>
+<p>The neighbors of state (50, 64) are [(49, 65), (50, 65), (51, 65), (49, 64), (50, 64), (51, 64), (49, 63), (50, 63), (51, 63)]</p>
+<p>The neighbors of state (50, 63) are [(49, 64), (50, 64), (51, 64), (49, 63), (50, 63), (51, 63), (49, 62), (50, 62), (51, 62)]</p>
+<p>The neighbors of state (50, 62) are [(49, 63), (50, 63), (51, 63), (49, 62), (50, 62), (51, 62), (49, 61), (50, 61), (51, 61)]</p>
+<p>The neighbors of state (50, 61) are [(49, 62), (50, 62), (51, 62), (49, 61), (50, 61), (51, 61), (49, 60), (50, 60), (51, 60)]</p>
+<p>The neighbors of state (50, 60) are [(49, 61), (50, 61), (51, 61), (49, 60), (50, 60), (51, 60), (49, 59), (50, 59), (51, 59)]</p>
+<p>The neighbors of state (50, 59) are [(49, 60), (50, 60), (51, 60), (49, 59), (50, 59), (51, 59), (49, 58), (50, 58), (51, 58)]</p>
+<p>The neighbors of state (50, 58) are [(49, 59), (50, 59), (51, 59), (49, 58), (50, 58), (51, 58), (49, 57), (50, 57), (51, 57)]</p>
+<p>The neighbors of state (50, 57) are [(49, 58), (50, 58), (51, 58), (49, 57), (50, 57), (51, 57), (49, 56), (50, 56), (51, 56)]</p>
+<p>The neighbors of state (50, 56) are [(49, 57), (50, 57), (51, 57), (49, 56), (50, 56), (51, 56), (49, 55), (50, 55), (51, 55)]</p>
+<p>The neighbors of state (50, 55) are [(49, 56), (50, 56), (51, 56), (49, 55), (50, 55), (51, 55), (49, 54), (50, 54), (51, 54)]</p>
+<p>The neighbors of state (50, 54) are [(49, 55), (50, 55), (51, 55), (49, 54), (50, 54), (51, 54), (49, 53), (50, 53), (51, 53)]</p>
+<p>The neighbors of state (50, 53) are [(49, 54), (50, 54), (51, 54), (49, 53), (50, 53), (51, 53), (49, 52), (50, 52), (51, 52)]</p>
+<p>The neighbors of state (50, 52) are [(49, 53), (50, 53), (51, 53), (49, 52), (50, 52), (51, 52), (49, 51), (50, 51), (51, 51)]</p>
+<p>The neighbors of state (50, 51) are [(49, 52), (50, 52), (51, 52), (49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50)]</p>
+<p>The neighbors of state (50, 50) are [(49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 111.16667</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_50000_(2)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_50000_(2)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 110.2 seconds</i></p>
+<p></p>
+<h2>Trial 3 Results: </h2>
+<p>The neighbors of state (82, 22) are [(81, 23), (82, 23), (83, 23), (81, 22), (82, 22), (83, 22), (81, 21), (82, 21), (83, 21)]</p>
+<p>The neighbors of state (81, 23) are [(80, 24), (81, 24), (82, 24), (80, 23), (81, 23), (82, 23), (80, 22), (81, 22), (82, 22)]</p>
+<p>The neighbors of state (80, 24) are [(79, 25), (80, 25), (81, 25), (79, 24), (80, 24), (81, 24), (79, 23), (80, 23), (81, 23)]</p>
+<p>The neighbors of state (79, 25) are [(78, 26), (79, 26), (80, 26), (78, 25), (79, 25), (80, 25), (78, 24), (79, 24), (80, 24)]</p>
+<p>The neighbors of state (78, 26) are [(77, 27), (78, 27), (79, 27), (77, 26), (78, 26), (79, 26), (77, 25), (78, 25), (79, 25)]</p>
+<p>The neighbors of state (77, 27) are [(76, 28), (77, 28), (78, 28), (76, 27), (77, 27), (78, 27), (76, 26), (77, 26), (78, 26)]</p>
+<p>The neighbors of state (76, 28) are [(75, 29), (76, 29), (77, 29), (75, 28), (76, 28), (77, 28), (75, 27), (76, 27), (77, 27)]</p>
+<p>The neighbors of state (75, 29) are [(74, 30), (75, 30), (76, 30), (74, 29), (75, 29), (76, 29), (74, 28), (75, 28), (76, 28)]</p>
+<p>The neighbors of state (74, 30) are [(73, 31), (74, 31), (75, 31), (73, 30), (74, 30), (75, 30), (73, 29), (74, 29), (75, 29)]</p>
+<p>The neighbors of state (73, 31) are [(72, 32), (73, 32), (74, 32), (72, 31), (73, 31), (74, 31), (72, 30), (73, 30), (74, 30)]</p>
+<p>The neighbors of state (72, 32) are [(71, 33), (72, 33), (73, 33), (71, 32), (72, 32), (73, 32), (71, 31), (72, 31), (73, 31)]</p>
+<p>The neighbors of state (71, 33) are [(70, 34), (71, 34), (72, 34), (70, 33), (71, 33), (72, 33), (70, 32), (71, 32), (72, 32)]</p>
+<p>The neighbors of state (70, 34) are [(69, 35), (70, 35), (71, 35), (69, 34), (70, 34), (71, 34), (69, 33), (70, 33), (71, 33)]</p>
+<p>The neighbors of state (69, 35) are [(68, 36), (69, 36), (70, 36), (68, 35), (69, 35), (70, 35), (68, 34), (69, 34), (70, 34)]</p>
+<p>The neighbors of state (68, 36) are [(67, 37), (68, 37), (69, 37), (67, 36), (68, 36), (69, 36), (67, 35), (68, 35), (69, 35)]</p>
+<p>The neighbors of state (67, 37) are [(66, 38), (67, 38), (68, 38), (66, 37), (67, 37), (68, 37), (66, 36), (67, 36), (68, 36)]</p>
+<p>The neighbors of state (66, 38) are [(65, 39), (66, 39), (67, 39), (65, 38), (66, 38), (67, 38), (65, 37), (66, 37), (67, 37)]</p>
+<p>The neighbors of state (65, 39) are [(64, 40), (65, 40), (66, 40), (64, 39), (65, 39), (66, 39), (64, 38), (65, 38), (66, 38)]</p>
+<p>The neighbors of state (64, 40) are [(63, 41), (64, 41), (65, 41), (63, 40), (64, 40), (65, 40), (63, 39), (64, 39), (65, 39)]</p>
+<p>The neighbors of state (63, 41) are [(62, 42), (63, 42), (64, 42), (62, 41), (63, 41), (64, 41), (62, 40), (63, 40), (64, 40)]</p>
+<p>The neighbors of state (62, 42) are [(61, 43), (62, 43), (63, 43), (61, 42), (62, 42), (63, 42), (61, 41), (62, 41), (63, 41)]</p>
+<p>The neighbors of state (61, 43) are [(60, 44), (61, 44), (62, 44), (60, 43), (61, 43), (62, 43), (60, 42), (61, 42), (62, 42)]</p>
+<p>The neighbors of state (60, 44) are [(59, 45), (60, 45), (61, 45), (59, 44), (60, 44), (61, 44), (59, 43), (60, 43), (61, 43)]</p>
+<p>The neighbors of state (59, 45) are [(58, 46), (59, 46), (60, 46), (58, 45), (59, 45), (60, 45), (58, 44), (59, 44), (60, 44)]</p>
+<p>The neighbors of state (58, 46) are [(57, 47), (58, 47), (59, 47), (57, 46), (58, 46), (59, 46), (57, 45), (58, 45), (59, 45)]</p>
+<p>The neighbors of state (57, 47) are [(56, 48), (57, 48), (58, 48), (56, 47), (57, 47), (58, 47), (56, 46), (57, 46), (58, 46)]</p>
+<p>The neighbors of state (56, 48) are [(55, 49), (56, 49), (57, 49), (55, 48), (56, 48), (57, 48), (55, 47), (56, 47), (57, 47)]</p>
+<p>The neighbors of state (55, 49) are [(54, 50), (55, 50), (56, 50), (54, 49), (55, 49), (56, 49), (54, 48), (55, 48), (56, 48)]</p>
+<p>The neighbors of state (54, 50) are [(53, 51), (54, 51), (55, 51), (53, 50), (54, 50), (55, 50), (53, 49), (54, 49), (55, 49)]</p>
+<p>The neighbors of state (53, 50) are [(52, 51), (53, 51), (54, 51), (52, 50), (53, 50), (54, 50), (52, 49), (53, 49), (54, 49)]</p>
+<p>The neighbors of state (52, 50) are [(51, 51), (52, 51), (53, 51), (51, 50), (52, 50), (53, 50), (51, 49), (52, 49), (53, 49)]</p>
+<p>The neighbors of state (51, 50) are [(50, 51), (51, 51), (52, 51), (50, 50), (51, 50), (52, 50), (50, 49), (51, 49), (52, 49)]</p>
+<p>The neighbors of state (50, 50) are [(49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 103.58824</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_50000_(3)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_50000_(3)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 113.29 seconds</i></p>
+<p></p>
+<h2>Trial 4 Results: </h2>
+<p>The neighbors of state (53, 86) are [(51, 88), (53, 88), (55, 88), (51, 86), (53, 86), (55, 86), (51, 84), (53, 84), (55, 84)]</p>
+<p>The neighbors of state (51, 84) are [(49, 86), (51, 86), (53, 86), (49, 84), (51, 84), (53, 84), (49, 82), (51, 82), (53, 82)]</p>
+<p>The neighbors of state (51, 82) are [(49, 84), (51, 84), (53, 84), (49, 82), (51, 82), (53, 82), (49, 80), (51, 80), (53, 80)]</p>
+<p>The neighbors of state (51, 80) are [(49, 82), (51, 82), (53, 82), (49, 80), (51, 80), (53, 80), (49, 78), (51, 78), (53, 78)]</p>
+<p>The neighbors of state (51, 78) are [(49, 80), (51, 80), (53, 80), (49, 78), (51, 78), (53, 78), (49, 76), (51, 76), (53, 76)]</p>
+<p>The neighbors of state (51, 76) are [(49, 78), (51, 78), (53, 78), (49, 76), (51, 76), (53, 76), (49, 74), (51, 74), (53, 74)]</p>
+<p>The neighbors of state (51, 74) are [(49, 76), (51, 76), (53, 76), (49, 74), (51, 74), (53, 74), (49, 72), (51, 72), (53, 72)]</p>
+<p>The neighbors of state (51, 72) are [(49, 74), (51, 74), (53, 74), (49, 72), (51, 72), (53, 72), (49, 70), (51, 70), (53, 70)]</p>
+<p>The neighbors of state (51, 70) are [(49, 72), (51, 72), (53, 72), (49, 70), (51, 70), (53, 70), (49, 68), (51, 68), (53, 68)]</p>
+<p>The neighbors of state (51, 68) are [(49, 70), (51, 70), (53, 70), (49, 68), (51, 68), (53, 68), (49, 66), (51, 66), (53, 66)]</p>
+<p>The neighbors of state (51, 66) are [(49, 68), (51, 68), (53, 68), (49, 66), (51, 66), (53, 66), (49, 64), (51, 64), (53, 64)]</p>
+<p>The neighbors of state (51, 64) are [(49, 66), (51, 66), (53, 66), (49, 64), (51, 64), (53, 64), (49, 62), (51, 62), (53, 62)]</p>
+<p>The neighbors of state (51, 62) are [(49, 64), (51, 64), (53, 64), (49, 62), (51, 62), (53, 62), (49, 60), (51, 60), (53, 60)]</p>
+<p>The neighbors of state (51, 60) are [(49, 62), (51, 62), (53, 62), (49, 60), (51, 60), (53, 60), (49, 58), (51, 58), (53, 58)]</p>
+<p>The neighbors of state (51, 58) are [(49, 60), (51, 60), (53, 60), (49, 58), (51, 58), (53, 58), (49, 56), (51, 56), (53, 56)]</p>
+<p>The neighbors of state (51, 56) are [(49, 58), (51, 58), (53, 58), (49, 56), (51, 56), (53, 56), (49, 54), (51, 54), (53, 54)]</p>
+<p>The neighbors of state (51, 54) are [(49, 56), (51, 56), (53, 56), (49, 54), (51, 54), (53, 54), (49, 52), (51, 52), (53, 52)]</p>
+<p>The neighbors of state (51, 52) are [(49, 54), (51, 54), (53, 54), (49, 52), (51, 52), (53, 52), (49, 50), (51, 50), (53, 50)]</p>
+<p>The neighbors of state (51, 50) are [(49, 52), (51, 52), (53, 52), (49, 50), (51, 50), (53, 50), (49, 48), (51, 48), (53, 48)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 118.2</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_50000_(4)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_50000_(4)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 113.0 seconds</i></p>
+<p></p>
+<h1>Monte Carlo Program for N=100000 runs, Sample Size of 100000</h1>
+<h2>Trial 1 Results: </h2>
+<p>The neighbors of state (11, 5) are [(10, 6), (11, 6), (12, 6), (10, 5), (11, 5), (12, 5), (10, 4), (11, 4), (12, 4)]</p>
+<p>The neighbors of state (12, 6) are [(11, 7), (12, 7), (13, 7), (11, 6), (12, 6), (13, 6), (11, 5), (12, 5), (13, 5)]</p>
+<p>The neighbors of state (13, 7) are [(12, 8), (13, 8), (14, 8), (12, 7), (13, 7), (14, 7), (12, 6), (13, 6), (14, 6)]</p>
+<p>The neighbors of state (14, 8) are [(13, 9), (14, 9), (15, 9), (13, 8), (14, 8), (15, 8), (13, 7), (14, 7), (15, 7)]</p>
+<p>The neighbors of state (15, 9) are [(14, 10), (15, 10), (16, 10), (14, 9), (15, 9), (16, 9), (14, 8), (15, 8), (16, 8)]</p>
+<p>The neighbors of state (16, 10) are [(15, 11), (16, 11), (17, 11), (15, 10), (16, 10), (17, 10), (15, 9), (16, 9), (17, 9)]</p>
+<p>The neighbors of state (17, 11) are [(16, 12), (17, 12), (18, 12), (16, 11), (17, 11), (18, 11), (16, 10), (17, 10), (18, 10)]</p>
+<p>The neighbors of state (18, 12) are [(17, 13), (18, 13), (19, 13), (17, 12), (18, 12), (19, 12), (17, 11), (18, 11), (19, 11)]</p>
+<p>The neighbors of state (19, 13) are [(18, 14), (19, 14), (20, 14), (18, 13), (19, 13), (20, 13), (18, 12), (19, 12), (20, 12)]</p>
+<p>The neighbors of state (20, 14) are [(19, 15), (20, 15), (21, 15), (19, 14), (20, 14), (21, 14), (19, 13), (20, 13), (21, 13)]</p>
+<p>The neighbors of state (21, 15) are [(20, 16), (21, 16), (22, 16), (20, 15), (21, 15), (22, 15), (20, 14), (21, 14), (22, 14)]</p>
+<p>The neighbors of state (22, 16) are [(21, 17), (22, 17), (23, 17), (21, 16), (22, 16), (23, 16), (21, 15), (22, 15), (23, 15)]</p>
+<p>The neighbors of state (23, 17) are [(22, 18), (23, 18), (24, 18), (22, 17), (23, 17), (24, 17), (22, 16), (23, 16), (24, 16)]</p>
+<p>The neighbors of state (24, 18) are [(23, 19), (24, 19), (25, 19), (23, 18), (24, 18), (25, 18), (23, 17), (24, 17), (25, 17)]</p>
+<p>The neighbors of state (25, 19) are [(24, 20), (25, 20), (26, 20), (24, 19), (25, 19), (26, 19), (24, 18), (25, 18), (26, 18)]</p>
+<p>The neighbors of state (26, 20) are [(25, 21), (26, 21), (27, 21), (25, 20), (26, 20), (27, 20), (25, 19), (26, 19), (27, 19)]</p>
+<p>The neighbors of state (27, 21) are [(26, 22), (27, 22), (28, 22), (26, 21), (27, 21), (28, 21), (26, 20), (27, 20), (28, 20)]</p>
+<p>The neighbors of state (28, 22) are [(27, 23), (28, 23), (29, 23), (27, 22), (28, 22), (29, 22), (27, 21), (28, 21), (29, 21)]</p>
+<p>The neighbors of state (29, 23) are [(28, 24), (29, 24), (30, 24), (28, 23), (29, 23), (30, 23), (28, 22), (29, 22), (30, 22)]</p>
+<p>The neighbors of state (30, 24) are [(29, 25), (30, 25), (31, 25), (29, 24), (30, 24), (31, 24), (29, 23), (30, 23), (31, 23)]</p>
+<p>The neighbors of state (31, 25) are [(30, 26), (31, 26), (32, 26), (30, 25), (31, 25), (32, 25), (30, 24), (31, 24), (32, 24)]</p>
+<p>The neighbors of state (32, 26) are [(31, 27), (32, 27), (33, 27), (31, 26), (32, 26), (33, 26), (31, 25), (32, 25), (33, 25)]</p>
+<p>The neighbors of state (33, 27) are [(32, 28), (33, 28), (34, 28), (32, 27), (33, 27), (34, 27), (32, 26), (33, 26), (34, 26)]</p>
+<p>The neighbors of state (34, 28) are [(33, 29), (34, 29), (35, 29), (33, 28), (34, 28), (35, 28), (33, 27), (34, 27), (35, 27)]</p>
+<p>The neighbors of state (35, 29) are [(34, 30), (35, 30), (36, 30), (34, 29), (35, 29), (36, 29), (34, 28), (35, 28), (36, 28)]</p>
+<p>The neighbors of state (36, 30) are [(35, 31), (36, 31), (37, 31), (35, 30), (36, 30), (37, 30), (35, 29), (36, 29), (37, 29)]</p>
+<p>The neighbors of state (37, 31) are [(36, 32), (37, 32), (38, 32), (36, 31), (37, 31), (38, 31), (36, 30), (37, 30), (38, 30)]</p>
+<p>The neighbors of state (38, 32) are [(37, 33), (38, 33), (39, 33), (37, 32), (38, 32), (39, 32), (37, 31), (38, 31), (39, 31)]</p>
+<p>The neighbors of state (39, 33) are [(38, 34), (39, 34), (40, 34), (38, 33), (39, 33), (40, 33), (38, 32), (39, 32), (40, 32)]</p>
+<p>The neighbors of state (40, 34) are [(39, 35), (40, 35), (41, 35), (39, 34), (40, 34), (41, 34), (39, 33), (40, 33), (41, 33)]</p>
+<p>The neighbors of state (41, 35) are [(40, 36), (41, 36), (42, 36), (40, 35), (41, 35), (42, 35), (40, 34), (41, 34), (42, 34)]</p>
+<p>The neighbors of state (42, 36) are [(41, 37), (42, 37), (43, 37), (41, 36), (42, 36), (43, 36), (41, 35), (42, 35), (43, 35)]</p>
+<p>The neighbors of state (43, 37) are [(42, 38), (43, 38), (44, 38), (42, 37), (43, 37), (44, 37), (42, 36), (43, 36), (44, 36)]</p>
+<p>The neighbors of state (44, 38) are [(43, 39), (44, 39), (45, 39), (43, 38), (44, 38), (45, 38), (43, 37), (44, 37), (45, 37)]</p>
+<p>The neighbors of state (45, 39) are [(44, 40), (45, 40), (46, 40), (44, 39), (45, 39), (46, 39), (44, 38), (45, 38), (46, 38)]</p>
+<p>The neighbors of state (46, 40) are [(45, 41), (46, 41), (47, 41), (45, 40), (46, 40), (47, 40), (45, 39), (46, 39), (47, 39)]</p>
+<p>The neighbors of state (47, 41) are [(46, 42), (47, 42), (48, 42), (46, 41), (47, 41), (48, 41), (46, 40), (47, 40), (48, 40)]</p>
+<p>The neighbors of state (48, 42) are [(47, 43), (48, 43), (49, 43), (47, 42), (48, 42), (49, 42), (47, 41), (48, 41), (49, 41)]</p>
+<p>The neighbors of state (49, 43) are [(48, 44), (49, 44), (50, 44), (48, 43), (49, 43), (50, 43), (48, 42), (49, 42), (50, 42)]</p>
+<p>The neighbors of state (50, 44) are [(49, 45), (50, 45), (51, 45), (49, 44), (50, 44), (51, 44), (49, 43), (50, 43), (51, 43)]</p>
+<p>The neighbors of state (50, 45) are [(49, 46), (50, 46), (51, 46), (49, 45), (50, 45), (51, 45), (49, 44), (50, 44), (51, 44)]</p>
+<p>The neighbors of state (50, 46) are [(49, 47), (50, 47), (51, 47), (49, 46), (50, 46), (51, 46), (49, 45), (50, 45), (51, 45)]</p>
+<p>The neighbors of state (50, 47) are [(49, 48), (50, 48), (51, 48), (49, 47), (50, 47), (51, 47), (49, 46), (50, 46), (51, 46)]</p>
+<p>The neighbors of state (50, 48) are [(49, 49), (50, 49), (51, 49), (49, 48), (50, 48), (51, 48), (49, 47), (50, 47), (51, 47)]</p>
+<p>The neighbors of state (50, 49) are [(49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49), (49, 48), (50, 48), (51, 48)]</p>
+<p>The neighbors of state (50, 50) are [(49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 61.38298</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_100000_(1)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_100000_(1)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 228.44 seconds</i></p>
+<p></p>
+<h2>Trial 2 Results: </h2>
+<p>The neighbors of state (14, 76) are [(13, 77), (14, 77), (15, 77), (13, 76), (14, 76), (15, 76), (13, 75), (14, 75), (15, 75)]</p>
+<p>The neighbors of state (15, 75) are [(14, 76), (15, 76), (16, 76), (14, 75), (15, 75), (16, 75), (14, 74), (15, 74), (16, 74)]</p>
+<p>The neighbors of state (16, 74) are [(15, 75), (16, 75), (17, 75), (15, 74), (16, 74), (17, 74), (15, 73), (16, 73), (17, 73)]</p>
+<p>The neighbors of state (17, 73) are [(16, 74), (17, 74), (18, 74), (16, 73), (17, 73), (18, 73), (16, 72), (17, 72), (18, 72)]</p>
+<p>The neighbors of state (18, 72) are [(17, 73), (18, 73), (19, 73), (17, 72), (18, 72), (19, 72), (17, 71), (18, 71), (19, 71)]</p>
+<p>The neighbors of state (19, 71) are [(18, 72), (19, 72), (20, 72), (18, 71), (19, 71), (20, 71), (18, 70), (19, 70), (20, 70)]</p>
+<p>The neighbors of state (20, 70) are [(19, 71), (20, 71), (21, 71), (19, 70), (20, 70), (21, 70), (19, 69), (20, 69), (21, 69)]</p>
+<p>The neighbors of state (21, 69) are [(20, 70), (21, 70), (22, 70), (20, 69), (21, 69), (22, 69), (20, 68), (21, 68), (22, 68)]</p>
+<p>The neighbors of state (22, 68) are [(21, 69), (22, 69), (23, 69), (21, 68), (22, 68), (23, 68), (21, 67), (22, 67), (23, 67)]</p>
+<p>The neighbors of state (23, 67) are [(22, 68), (23, 68), (24, 68), (22, 67), (23, 67), (24, 67), (22, 66), (23, 66), (24, 66)]</p>
+<p>The neighbors of state (24, 66) are [(23, 67), (24, 67), (25, 67), (23, 66), (24, 66), (25, 66), (23, 65), (24, 65), (25, 65)]</p>
+<p>The neighbors of state (25, 65) are [(24, 66), (25, 66), (26, 66), (24, 65), (25, 65), (26, 65), (24, 64), (25, 64), (26, 64)]</p>
+<p>The neighbors of state (26, 64) are [(25, 65), (26, 65), (27, 65), (25, 64), (26, 64), (27, 64), (25, 63), (26, 63), (27, 63)]</p>
+<p>The neighbors of state (27, 63) are [(26, 64), (27, 64), (28, 64), (26, 63), (27, 63), (28, 63), (26, 62), (27, 62), (28, 62)]</p>
+<p>The neighbors of state (28, 62) are [(27, 63), (28, 63), (29, 63), (27, 62), (28, 62), (29, 62), (27, 61), (28, 61), (29, 61)]</p>
+<p>The neighbors of state (29, 61) are [(28, 62), (29, 62), (30, 62), (28, 61), (29, 61), (30, 61), (28, 60), (29, 60), (30, 60)]</p>
+<p>The neighbors of state (30, 60) are [(29, 61), (30, 61), (31, 61), (29, 60), (30, 60), (31, 60), (29, 59), (30, 59), (31, 59)]</p>
+<p>The neighbors of state (31, 59) are [(30, 60), (31, 60), (32, 60), (30, 59), (31, 59), (32, 59), (30, 58), (31, 58), (32, 58)]</p>
+<p>The neighbors of state (32, 58) are [(31, 59), (32, 59), (33, 59), (31, 58), (32, 58), (33, 58), (31, 57), (32, 57), (33, 57)]</p>
+<p>The neighbors of state (33, 57) are [(32, 58), (33, 58), (34, 58), (32, 57), (33, 57), (34, 57), (32, 56), (33, 56), (34, 56)]</p>
+<p>The neighbors of state (34, 56) are [(33, 57), (34, 57), (35, 57), (33, 56), (34, 56), (35, 56), (33, 55), (34, 55), (35, 55)]</p>
+<p>The neighbors of state (35, 55) are [(34, 56), (35, 56), (36, 56), (34, 55), (35, 55), (36, 55), (34, 54), (35, 54), (36, 54)]</p>
+<p>The neighbors of state (36, 54) are [(35, 55), (36, 55), (37, 55), (35, 54), (36, 54), (37, 54), (35, 53), (36, 53), (37, 53)]</p>
+<p>The neighbors of state (37, 53) are [(36, 54), (37, 54), (38, 54), (36, 53), (37, 53), (38, 53), (36, 52), (37, 52), (38, 52)]</p>
+<p>The neighbors of state (38, 52) are [(37, 53), (38, 53), (39, 53), (37, 52), (38, 52), (39, 52), (37, 51), (38, 51), (39, 51)]</p>
+<p>The neighbors of state (39, 51) are [(38, 52), (39, 52), (40, 52), (38, 51), (39, 51), (40, 51), (38, 50), (39, 50), (40, 50)]</p>
+<p>The neighbors of state (40, 50) are [(39, 51), (40, 51), (41, 51), (39, 50), (40, 50), (41, 50), (39, 49), (40, 49), (41, 49)]</p>
+<p>The neighbors of state (41, 50) are [(40, 51), (41, 51), (42, 51), (40, 50), (41, 50), (42, 50), (40, 49), (41, 49), (42, 49)]</p>
+<p>The neighbors of state (42, 50) are [(41, 51), (42, 51), (43, 51), (41, 50), (42, 50), (43, 50), (41, 49), (42, 49), (43, 49)]</p>
+<p>The neighbors of state (43, 50) are [(42, 51), (43, 51), (44, 51), (42, 50), (43, 50), (44, 50), (42, 49), (43, 49), (44, 49)]</p>
+<p>The neighbors of state (44, 50) are [(43, 51), (44, 51), (45, 51), (43, 50), (44, 50), (45, 50), (43, 49), (44, 49), (45, 49)]</p>
+<p>The neighbors of state (45, 50) are [(44, 51), (45, 51), (46, 51), (44, 50), (45, 50), (46, 50), (44, 49), (45, 49), (46, 49)]</p>
+<p>The neighbors of state (46, 50) are [(45, 51), (46, 51), (47, 51), (45, 50), (46, 50), (47, 50), (45, 49), (46, 49), (47, 49)]</p>
+<p>The neighbors of state (47, 50) are [(46, 51), (47, 51), (48, 51), (46, 50), (47, 50), (48, 50), (46, 49), (47, 49), (48, 49)]</p>
+<p>The neighbors of state (48, 50) are [(47, 51), (48, 51), (49, 51), (47, 50), (48, 50), (49, 50), (47, 49), (48, 49), (49, 49)]</p>
+<p>The neighbors of state (49, 50) are [(48, 51), (49, 51), (50, 51), (48, 50), (49, 50), (50, 50), (48, 49), (49, 49), (50, 49)]</p>
+<p>The neighbors of state (50, 50) are [(49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 91.71053</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_100000_(2)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_100000_(2)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 226.65 seconds</i></p>
+<p></p>
+<h2>Trial 3 Results: </h2>
+<p>The neighbors of state (96, 41) are [(95, 42), (96, 42), (97, 42), (95, 41), (96, 41), (97, 41), (95, 40), (96, 40), (97, 40)]</p>
+<p>The neighbors of state (95, 42) are [(94, 43), (95, 43), (96, 43), (94, 42), (95, 42), (96, 42), (94, 41), (95, 41), (96, 41)]</p>
+<p>The neighbors of state (94, 43) are [(93, 44), (94, 44), (95, 44), (93, 43), (94, 43), (95, 43), (93, 42), (94, 42), (95, 42)]</p>
+<p>The neighbors of state (93, 44) are [(92, 45), (93, 45), (94, 45), (92, 44), (93, 44), (94, 44), (92, 43), (93, 43), (94, 43)]</p>
+<p>The neighbors of state (92, 45) are [(91, 46), (92, 46), (93, 46), (91, 45), (92, 45), (93, 45), (91, 44), (92, 44), (93, 44)]</p>
+<p>The neighbors of state (91, 46) are [(90, 47), (91, 47), (92, 47), (90, 46), (91, 46), (92, 46), (90, 45), (91, 45), (92, 45)]</p>
+<p>The neighbors of state (90, 47) are [(89, 48), (90, 48), (91, 48), (89, 47), (90, 47), (91, 47), (89, 46), (90, 46), (91, 46)]</p>
+<p>The neighbors of state (89, 48) are [(88, 49), (89, 49), (90, 49), (88, 48), (89, 48), (90, 48), (88, 47), (89, 47), (90, 47)]</p>
+<p>The neighbors of state (88, 49) are [(87, 50), (88, 50), (89, 50), (87, 49), (88, 49), (89, 49), (87, 48), (88, 48), (89, 48)]</p>
+<p>The neighbors of state (87, 50) are [(86, 51), (87, 51), (88, 51), (86, 50), (87, 50), (88, 50), (86, 49), (87, 49), (88, 49)]</p>
+<p>The neighbors of state (86, 50) are [(85, 51), (86, 51), (87, 51), (85, 50), (86, 50), (87, 50), (85, 49), (86, 49), (87, 49)]</p>
+<p>The neighbors of state (85, 50) are [(84, 51), (85, 51), (86, 51), (84, 50), (85, 50), (86, 50), (84, 49), (85, 49), (86, 49)]</p>
+<p>The neighbors of state (84, 50) are [(83, 51), (84, 51), (85, 51), (83, 50), (84, 50), (85, 50), (83, 49), (84, 49), (85, 49)]</p>
+<p>The neighbors of state (83, 50) are [(82, 51), (83, 51), (84, 51), (82, 50), (83, 50), (84, 50), (82, 49), (83, 49), (84, 49)]</p>
+<p>The neighbors of state (82, 50) are [(81, 51), (82, 51), (83, 51), (81, 50), (82, 50), (83, 50), (81, 49), (82, 49), (83, 49)]</p>
+<p>The neighbors of state (81, 50) are [(80, 51), (81, 51), (82, 51), (80, 50), (81, 50), (82, 50), (80, 49), (81, 49), (82, 49)]</p>
+<p>The neighbors of state (80, 50) are [(79, 51), (80, 51), (81, 51), (79, 50), (80, 50), (81, 50), (79, 49), (80, 49), (81, 49)]</p>
+<p>The neighbors of state (79, 50) are [(78, 51), (79, 51), (80, 51), (78, 50), (79, 50), (80, 50), (78, 49), (79, 49), (80, 49)]</p>
+<p>The neighbors of state (78, 50) are [(77, 51), (78, 51), (79, 51), (77, 50), (78, 50), (79, 50), (77, 49), (78, 49), (79, 49)]</p>
+<p>The neighbors of state (77, 50) are [(76, 51), (77, 51), (78, 51), (76, 50), (77, 50), (78, 50), (76, 49), (77, 49), (78, 49)]</p>
+<p>The neighbors of state (76, 50) are [(75, 51), (76, 51), (77, 51), (75, 50), (76, 50), (77, 50), (75, 49), (76, 49), (77, 49)]</p>
+<p>The neighbors of state (75, 50) are [(74, 51), (75, 51), (76, 51), (74, 50), (75, 50), (76, 50), (74, 49), (75, 49), (76, 49)]</p>
+<p>The neighbors of state (74, 50) are [(73, 51), (74, 51), (75, 51), (73, 50), (74, 50), (75, 50), (73, 49), (74, 49), (75, 49)]</p>
+<p>The neighbors of state (73, 50) are [(72, 51), (73, 51), (74, 51), (72, 50), (73, 50), (74, 50), (72, 49), (73, 49), (74, 49)]</p>
+<p>The neighbors of state (72, 50) are [(71, 51), (72, 51), (73, 51), (71, 50), (72, 50), (73, 50), (71, 49), (72, 49), (73, 49)]</p>
+<p>The neighbors of state (71, 50) are [(70, 51), (71, 51), (72, 51), (70, 50), (71, 50), (72, 50), (70, 49), (71, 49), (72, 49)]</p>
+<p>The neighbors of state (70, 50) are [(69, 51), (70, 51), (71, 51), (69, 50), (70, 50), (71, 50), (69, 49), (70, 49), (71, 49)]</p>
+<p>The neighbors of state (69, 50) are [(68, 51), (69, 51), (70, 51), (68, 50), (69, 50), (70, 50), (68, 49), (69, 49), (70, 49)]</p>
+<p>The neighbors of state (68, 50) are [(67, 51), (68, 51), (69, 51), (67, 50), (68, 50), (69, 50), (67, 49), (68, 49), (69, 49)]</p>
+<p>The neighbors of state (67, 50) are [(66, 51), (67, 51), (68, 51), (66, 50), (67, 50), (68, 50), (66, 49), (67, 49), (68, 49)]</p>
+<p>The neighbors of state (66, 50) are [(65, 51), (66, 51), (67, 51), (65, 50), (66, 50), (67, 50), (65, 49), (66, 49), (67, 49)]</p>
+<p>The neighbors of state (65, 50) are [(64, 51), (65, 51), (66, 51), (64, 50), (65, 50), (66, 50), (64, 49), (65, 49), (66, 49)]</p>
+<p>The neighbors of state (64, 50) are [(63, 51), (64, 51), (65, 51), (63, 50), (64, 50), (65, 50), (63, 49), (64, 49), (65, 49)]</p>
+<p>The neighbors of state (63, 50) are [(62, 51), (63, 51), (64, 51), (62, 50), (63, 50), (64, 50), (62, 49), (63, 49), (64, 49)]</p>
+<p>The neighbors of state (62, 50) are [(61, 51), (62, 51), (63, 51), (61, 50), (62, 50), (63, 50), (61, 49), (62, 49), (63, 49)]</p>
+<p>The neighbors of state (61, 50) are [(60, 51), (61, 51), (62, 51), (60, 50), (61, 50), (62, 50), (60, 49), (61, 49), (62, 49)]</p>
+<p>The neighbors of state (60, 50) are [(59, 51), (60, 51), (61, 51), (59, 50), (60, 50), (61, 50), (59, 49), (60, 49), (61, 49)]</p>
+<p>The neighbors of state (59, 50) are [(58, 51), (59, 51), (60, 51), (58, 50), (59, 50), (60, 50), (58, 49), (59, 49), (60, 49)]</p>
+<p>The neighbors of state (58, 50) are [(57, 51), (58, 51), (59, 51), (57, 50), (58, 50), (59, 50), (57, 49), (58, 49), (59, 49)]</p>
+<p>The neighbors of state (57, 50) are [(56, 51), (57, 51), (58, 51), (56, 50), (57, 50), (58, 50), (56, 49), (57, 49), (58, 49)]</p>
+<p>The neighbors of state (56, 50) are [(55, 51), (56, 51), (57, 51), (55, 50), (56, 50), (57, 50), (55, 49), (56, 49), (57, 49)]</p>
+<p>The neighbors of state (55, 50) are [(54, 51), (55, 51), (56, 51), (54, 50), (55, 50), (56, 50), (54, 49), (55, 49), (56, 49)]</p>
+<p>The neighbors of state (54, 50) are [(53, 51), (54, 51), (55, 51), (53, 50), (54, 50), (55, 50), (53, 49), (54, 49), (55, 49)]</p>
+<p>The neighbors of state (53, 50) are [(52, 51), (53, 51), (54, 51), (52, 50), (53, 50), (54, 50), (52, 49), (53, 49), (54, 49)]</p>
+<p>The neighbors of state (52, 50) are [(51, 51), (52, 51), (53, 51), (51, 50), (52, 50), (53, 50), (51, 49), (52, 49), (53, 49)]</p>
+<p>The neighbors of state (51, 50) are [(50, 51), (51, 51), (52, 51), (50, 50), (51, 50), (52, 50), (50, 49), (51, 49), (52, 49)]</p>
+<p>The neighbors of state (50, 50) are [(49, 51), (50, 51), (51, 51), (49, 50), (50, 50), (51, 50), (49, 49), (50, 49), (51, 49)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 121.58333</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_100000_(3)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_100000_(3)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 230.21 seconds</i></p>
+<p></p>
+<h2>Trial 4 Results: </h2>
+<p>The neighbors of state (37, 32) are [(35, 34), (37, 34), (39, 34), (35, 32), (37, 32), (39, 32), (35, 30), (37, 30), (39, 30)]</p>
+<p>The neighbors of state (39, 34) are [(37, 36), (39, 36), (41, 36), (37, 34), (39, 34), (41, 34), (37, 32), (39, 32), (41, 32)]</p>
+<p>The neighbors of state (41, 36) are [(39, 38), (41, 38), (43, 38), (39, 36), (41, 36), (43, 36), (39, 34), (41, 34), (43, 34)]</p>
+<p>The neighbors of state (43, 38) are [(41, 40), (43, 40), (45, 40), (41, 38), (43, 38), (45, 38), (41, 36), (43, 36), (45, 36)]</p>
+<p>The neighbors of state (45, 40) are [(43, 42), (45, 42), (47, 42), (43, 40), (45, 40), (47, 40), (43, 38), (45, 38), (47, 38)]</p>
+<p>The neighbors of state (47, 42) are [(45, 44), (47, 44), (49, 44), (45, 42), (47, 42), (49, 42), (45, 40), (47, 40), (49, 40)]</p>
+<p>The neighbors of state (49, 44) are [(47, 46), (49, 46), (51, 46), (47, 44), (49, 44), (51, 44), (47, 42), (49, 42), (51, 42)]</p>
+<p>The neighbors of state (51, 46) are [(49, 48), (51, 48), (53, 48), (49, 46), (51, 46), (53, 46), (49, 44), (51, 44), (53, 44)]</p>
+<p>The neighbors of state (51, 48) are [(49, 50), (51, 50), (53, 50), (49, 48), (51, 48), (53, 48), (49, 46), (51, 46), (53, 46)]</p>
+<p>The neighbors of state (51, 50) are [(49, 52), (51, 52), (53, 52), (49, 50), (51, 50), (53, 50), (49, 48), (51, 48), (53, 48)]</p>
+<p>We have calcuated the expectation of the set P and obtained the following results: 
+ Ep(f) = 87.72727</p>
+<p>As we would expect from Markov chain theory, our result Ep(f) converges to 100.</p>
+<p>Compared to the SLLN method's computed time average, the Monte Carlo method yielded a larger time average.</p>
+<img src="./mdd94 Monte Carlo_files/graph_100000_(4)_bar3d.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<img src="./mdd94 Monte Carlo_files/graph_100000_(4)_plot.png" alt="or varying runs, compare 3D P-histogram with a graph of p(m,n) vs. (m,n)" width="500" height="500">
+<p><i>Time of program run = 226.99 seconds</i></p>
+<p></p>
+
+</body></html>
