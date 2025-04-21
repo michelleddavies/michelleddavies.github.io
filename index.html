@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/img-02.jpeg" type="image/jpeg">
     <title>Michelle D. Davies</title>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/specimen/Kumbh+Sans -->
     <link rel="stylesheet" href="fontawesome/css/all.min.css">  <!-- https://fontawesome.com/-->  
@@ -11,9 +12,178 @@
     <link rel="stylesheet" href="slick/slick.min.css">          <!-- https://michelleddavies.github.io/slick/ -->
     <link rel="stylesheet" href="slick/slick-theme.css">
     <link rel="stylesheet" href="css/templatemo-upright.css">
+    <!-- Bootstrap 5.3 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-         th, td {  padding: 15px; border-color: #0d4463;  }
-    </style>
+
+        .tm-section {
+        scroll-margin-top: 70px; /* adjusts anchor scroll position */
+        padding-top: 60px;
+        }
+
+        .navbar {
+        background-color: #0d4463 !important; /* deep navy */
+        }
+
+        .navbar .nav-link {
+        color: #f0f0f0 !important;
+        transition: all 0.2s ease;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link.active {
+        color: #ffd700 !important; /* deep gold */
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        font-weight: bold;
+        }
+
+        .carousel .card {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            background-color: #f8f9fa; /* light gray */
+            border-radius: 0.5rem;
+        }
+
+        .card-text {
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        /* 🔳 Base Card Style */
+        #card-display .card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        max-width: 500px;
+        width: 100%;
+        height: auto;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* 🌀 Hover Effect */
+        #card-display .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 📌 Card Title */
+        #card-display .card-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #0d4463;
+        margin-bottom: 0.75rem;
+        }
+
+        /* 📄 Card Text */
+        #card-display .card-text {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #333;
+        max-height: 300px;
+        overflow-y: auto;
+        }
+
+        /* 📎 Buttons in footer */
+        #card-display .card-footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+        justify-content: flex-start;
+        }
+
+        .card-body {
+        overflow-y: auto;
+        max-height: 600px;
+        padding-right: 1rem; /* prevent text cutoff */
+        }
+
+
+        /* 🎨 Optional Tag Badges (if you add them) */
+        .card .badge {
+        background-color: #0d4463;
+        color: white;
+        font-size: 0.75rem;
+        margin-right: 0.25rem;
+        padding: 0.4em 0.6em;
+        border-radius: 4px;
+        }
+
+        th, td {
+          padding: 15px;
+          border-color: #0d4463;
+        }
+      
+        /* Fix sticky top */
+        .navbar {
+          position: fixed !important;
+          top: 0;
+          left: 0;
+          right: 0;
+          z-index: 1030;
+        }
+      
+        /* Remove sidebar spacing */
+        #tm-sidebar {
+          display: none !important;
+        }
+      
+        .tm-main {
+          margin-left: 0 !important;
+          width: 100% !important;
+          padding-top: 90px; /* Space for fixed navbar */
+        }
+      
+        body {
+          margin: 0;
+          padding: 0;
+        }
+      
+        .container-fluid > .row {
+          margin-left: 0;
+        }
+      
+        /* Navbar spacing tweaks */
+        .navbar-nav .nav-link {
+          padding-right: 1rem;
+          padding-left: 1rem;
+        }
+      
+        /* Force cards and table content to shrink on mobile */
+        table {
+          width: 100%;
+          display: block;
+          overflow-x: auto;
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 10;
+            background-color: rgba(13, 68, 99, 0.85);
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            font-size: 1.25rem;
+            border-radius: 4px;
+        }
+        .scroll-btn.left {
+            left: 0.5rem;
+        }
+        .scroll-btn.right {
+            right: 0.5rem;
+        }
+        .scroll-btn:hover {
+            background-color: #0d4463;
+        }
+      </style>      
 <!--
     
 TemplateMo 555 Upright
@@ -25,143 +195,61 @@ https://templatemo.com/tm-555-upright
 <body>    
     <div class="container-fluid">
         <div class="row">
-            <!-- Leftside bar -->
-            <div id="tm-sidebar" class="tm-sidebar"> 
-                <nav class="tm-nav">
-                    <button class="navbar-toggler" type="button" aria-label="Toggle navigation">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <div>
-                        <div class="tm-brand-box">
-                            <h1 class="tm-brand">Michelle (Chelle) D. Davies</h1>
-                        </div>                
-                        <ul id="tm-main-nav">
-                            <li class="nav-item">                                
-                                <a href="#home" class="nav-link current">
-                                    <div class="triangle-right"></div>
-                                    <i class="fas fa-home nav-icon"></i>
-                                    Home
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#gallery" class="nav-link">
-                                    <div class="triangle-right"></div>
-                                    <i class="fas fa-images nav-icon"></i>
-                                    Portfolio
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#about" class="nav-link">
-                                    <div class="triangle-right"></div>
-                                    <i class="fas fa-user-friends nav-icon"></i>
-                                    About & CV
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#contact" class="nav-link">
-                                    <div class="triangle-right"></div>
-                                    <i class="fas fa-envelope nav-icon"></i>
-                                    Contact
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.redbubble.com/people/chelledavies/shop?asc=u" class="nav-link external" target="_blank" rel="sponsored">
-                                    <div class="triangle-right"></div>
-                                    <i class="fas fa-external-link-alt nav-icon"></i>
-                                    Shop
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://www.linkedin.com/in/michelle-dominique-davies/" class="nav-link external" target="_blank" rel="sponsored">
-                                    <div class="triangle-right"></div>
-                                    <i class="fas fa-external-link-alt nav-icon"></i>
-                                    LinkedIn
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="https://github.com/michelleddavies" class="nav-link external" target="_blank" rel="sponsored">
-                                    <div class="triangle-right"></div>
-                                    <i class="fas fa-external-link-alt nav-icon"></i>
-                                    GitHub
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <footer class="mb-3 tm-mt-100">
-                        © Dec 2022 : <a href="https://templatemo.com" target="_parent" rel="sponsored">Chelle Davies</a>
-                    </footer>
-                </nav>
-            </div>
+            <header class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Chelle Davies</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                      <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#gallery">Portfolio</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                      <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                      <li class="nav-item"><a class="nav-link" href="/MDD_Resume.pdf" target="_blank">Download My CV</a></li>
+                      <li class="nav-item"><a class="nav-link" href="https://www.linkedin.com/in/michelle-dominique-davies/" target="_blank">Connect on LinkedIn</a></li>
+                      <li class="nav-item"><a class="nav-link" href="https://github.com/michelleddavies" target="_blank">GitHub</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </header>              
             
             <div class="tm-main">
                 <!-- Home section -->
                 <div class="tm-section-wrap">
                     <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-01.jpg"></div>                   
                     <section id="home" class="tm-section">
-                        <h2 class="tm-text-primary">I'm Chelle, a Computer Engineer and a Data Engineer.</h2>
+                        <h2 class="tm-text-primary">Hi, I'm Chelle — Data Engineer, Innovator, Problem Solver.</h2>
                         <hr class="mb-5">
                         <div class="row">
-                            <div class="col-lg-6 tm-col-home mb-4">
+                            <div class="col-lg-6 mb-4">
                                 <div class="tm-text-container">
-                                    <div class="tm-icon-container mb-5 mr-0 ml-auto">
-                                        <i class="fas fa-satellite-dish fa-4x tm-text-primary"></i>
-                                    </div>                                
+                                    <div class="tm-icon-container mb-4">
+                                        <i class="fas fa-satellite-dish fa-3x tm-text-primary"></i>
+                                    </div>
                                     <p>
-                                        I am an alumna of Cornell University's College of Engineering, and a current Master of Information and Data Science candidate at the University of California, Berkeley. In May of 2022, I graduated from Cornell with a Bachelor of Science in Electrical and Computer Engineering. From a young age, I have had a passion for creation and innovation. Whether it be building 3D models, graphic designs, websites or robotics projects, I'm always ready to take on a new challenge. My goal in life is to develop assistive technology for children with special needs.
+                                        I'm a Computer Engineer and a Data Engineer with roots in Cornell and UC Berkeley. From robotics to real-time analytics, I'm passionate about building intelligent systems that create real-world impact. Whether it's a 3D model, a machine learning pipeline, or a React dashboard — I build with purpose.
                                     </p>
-                                    <p>
-                                        I'm always looking for new challenges and opportunities to explore my passions further, and continue to develop projects that address different needs that I see in the world, across different mediums. From Data Visualization to Machine Learning and constructing new data pipelines, I love to adapt to new platforms - and I'm a fast learner too! If you're willing to have me, I'm ready to help further and elevate any project!
-                                    </p>
-                                </div>                                
+                                </div>
                             </div>
-                            <div class="col-lg-6 tm-col-home mb-4">
+                            <div class="col-lg-6 mb-4">
                                 <div class="tm-text-container">
-                                    <div class="tm-icon-container mb-5 mr-0 ml-auto">
-                                        <i class="fas fa-broadcast-tower fa-4x tm-text-primary"></i>
-                                    </div>                                 
+                                    <div class="tm-icon-container mb-4">
+                                        <i class="fas fa-broadcast-tower fa-3x tm-text-primary"></i>
+                                    </div>
                                     <p>
-                                        I design technological, practical solutions to the challenges I encounter. I came into this field of STEM with passion, skill and a propensity to learn and acquire new resources, but I was not always confident in that knowledge. Through being challenged in the spaces that I have been blessed to be part of and having the opportunity to think bigger and create the change that I wanted to see, I learned to be the first person to believe in myself.
+                                        I design tech with empathy. I bring not only skills in development and analysis, but a deep understanding of how solutions should meet people where they are. As a fast learner and agile thinker, I thrive in interdisciplinary spaces — from data science to design.
                                     </p>
-                                    <div class="text-right">
-                                        <a href="#gallery" class="btn btn-primary tm-btn-next">View my portfolio</a>
-                                    </div>                                    
                                 </div>
                             </div>
                         </div>
+                        <p>
+                            My current focus? Assistive tech, NLP, and scalable data infrastructure. I'm always looking for exciting collaborations where I can innovate, learn, and grow. Let’s create the future together.
+                        </p>
+                        <br>
                         <hr class="tm-hr-short mb-5">
-                        <div class="row tm-row-home">                            
-                            <div class="tm-col-home tm-col-home-l">
-                                <div class="media mb-4">
-                                    <i class="fas fa-scroll fa-4x tm-post-icon tm-text-primary"></i>
-                                    <div class="media-body">
-                                        <a href="#" class="d-block mb-2 tm-text-primary tm-post-link">Research</a>  
-                                        <p> One of the many aspects of the Technology industry that motivates me is the opportunity to pursue my interests in depth. I like to explore technology in the form of use cases, where I can combine tools to create a model which allows people to better understand how technology can augment the world we live in. I learn something new, I get to hone my problem-solving skills, and most importantly, I get to challenge myself in new ways. </p>
-                                    </div>                                    
-                                </div>
-                                <div class="media mb-4">
-                                    <i class="fas fa-cloud-sun fa-4x tm-post-icon tm-text-primary"></i>
-                                    <div class="media-body">
-                                        <a href="#" class="d-block mb-2 tm-text-primary tm-post-link">Software Development</a>  
-                                        <p>
-                                            The challenge of building a working platform that helps to address a problem AND is user-friendly is one that I choose to tackle head-on with every project. The software lifecycle can be very iterative and requires a lot of collaboration. I typically take a Test-Driven Development approach on individual work when possible. However, I also adapt to a team's chosen workflow in my contributions in order to deliver in the end.
-                                        </p>
-                                    </div>                                    
-                                </div>
-                                <div class="media mb-4">
-                                    <i class="fas fa-dove fa-4x tm-post-icon tm-text-primary"></i>
-                                    <div class="media-body">
-                                        <a href="#" class="d-block mb-2 tm-text-primary tm-post-link">Consulting</a>  
-                                        <p>
-                                            In my first full time role after graduating with my Bachelor of Science in Electrical and Computer Engineering in May of 2022, I am an Associate Data Scientist in IBM's Consulting business unit. My specific role is as a Data Engineer for Machine Learning. I'm currently a part of the Data Technology Transformation practice, in the Analytics & AI department. My projects are in the Healthcare and Life Sciences industry.
-                                        </p>
-                                    </div>                                    
-                                </div>
-                            </div>
-                            <div class="tm-col-home mr-0 ml-auto">
-                                <div class="tm-img-home-container" data-image-src="img/img-02.jpeg"></div>                                
-                            </div>
-                        </div>
-                    </section>
+                    </section>                    
                 </div>
                 <!-- Gallery section -->
                 <div class="tm-section-wrap">
@@ -169,226 +257,236 @@ https://templatemo.com/tm-555-upright
                     <section id="gallery" class="tm-section">
                         <h2 class="tm-text-primary">Portfolio</h2>
                         <hr class="mb-5">
-                        <table>
-                          <tr>
-                            <th><b><u>Project Title</u></b></th>
-                            <th><b><u>Summary</u></b></th>
-                            <th><b><u>Link(s)</u></b></th>
-                          </tr>
-                          <tr>
-                            <td>My Image Suite</td>
-                            <td>When I was in high school doing IB Higher Level Computer Science, we had to do an Internal Assessment project where we build a project for a client with a problem. I decided to build a simple photo-editing software for a friend of mine that was an IB Higher Level Art student, so that they count create their own photo-color filters in Obamacon photo style, but they can choose four colors to define the photo with. This project was done entirely in Python, from the photo-editing to the GUI that it is hosted in.</td>
-                            <td><a href="projects/my_image_suite/Development_of_misProduct.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Product Development Plan</a></td>
-                          </tr>
-                          <tr>
-                            <td>Mano816</td>
-                            <td>To allow for more mobility for amputees we created a robotic hand that mimics the movement of the other hand. This will enable the user to do simple tasks like hold a cup or open a door. We noticed that many of the hands that were created did not have a way to save and replay their motions. So in the future we plan on making this function. Also buying a functional prosthetic arm is really expensive so with our project we are hoping that we will be able to make buying prosthetics more cost effective.</td>
-                            <td><a href="projects/mano816/mano816.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Mano816 project detials</a></td>
-                          </tr>
-                          <tr>
-                            <td>Customizable Morse Code</td>
-                            <td>Inspired by a beginner's project from Girls Who Code, I decided to try to make a morse code machine that takes text input and outputs the corresponding more code signal for the entire phrase via the LED lights. There were many design considerations I made for this, like having dots and dashes appear on two different sets is lights to made them clear and distinguishable, thus improving readability. Overall, this project has been successful. When I have a greater budget and the necessary materials, I see myself upgrading this project by attempting to make a remote connection to the Arduino so that it does not have to be connected to work, and by mobilizing it so that it can "auto-deliver" any message to my family in these times of social distancing, Granted, I may need a sound component in case something happens to the circuit of lights or the message can't be interpreted for another reason.</td>
-                            <td><a href="projects/morse_code/morse_code.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Morse Code</a></td>
-                          </tr>
-                          <tr>
-                            <td>The Mood Lights Project</td>
-                            <td>This is a project that I particularly enjoyed because it ties my love of graphic design and art and colors with my love of circuits and robots. In this project, I display colors both in RGB LEDs and in terns of it's constituent R, G, and B values. This project has opened up opportunities for me to explore and analyze the random function, and system/computer colors as a whole. Check out the gallery and documentation to find out more about my final result! [UPDATE: I added a connection between this project and the My Image Suite Python script (see Projects > My Image Suite) by adding functionality so that I can display the RGB values of a selected photo's pixels through the board. The method for parsing the image is similar to this, with the added step of importing a photo in Arduino and the syntax for parsing the list of pixels].</td>
-                            <td><a href="projects/mood_lights/Documentation_ColorLights.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Color Lights Development Plan</a></td>
-                          </tr>
-                          <tr>
-                            <td>Reaction Time Game</td>
-                            <td>For one of my undergrad classes at Cornell (ECE 2300, Digital Logic and Computer Organization), we had to make a game that tests two players' reaction times. The way it works is that there are five rounds where, once each round starts, the first player to hit the button gets a point. The player that reaches 5 points first wins! But beware, if one player cheats by trying to press the button early, the other player gets the point for that round. Check out my gallery to see it in action!</td>
-                            <td><a href="projects/reaction_game_time/game.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Reaction Time Game Recap</a></td>
-                          </tr>
-                          <tr>
-                            <td>Cornell Media Guild Website</td>
-                            <td>During my term as Web Director of WVBR-FM, I single-handedly re-designed & optimized the Cornell Media Guild Website for desktop, tablet and mobile. For this project, I utilized HTML, CSS, Javascript, and HTTP server connections, hosting server management and XML script.</td>
-                            <td><a href="projects/cmg/cornell_media_guild.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Cornell Media Guild Website images</a></td>
-                          </tr>
-                          <tr>
-                            <td>WVBR FM Website</td>
-                            <td>During my term as Web Director of WVBR-FM, I single-handedly redesigned and updated the WVBR Website. The main coding I did for this project were HTTP scripting and Javascript to add even more functionality to this Wix website.</td>
-                            <td><a href="projects/wvbr_fm/wvbr_website.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">WVBR-FM Website images</a></td>
-                          </tr>
-                          <tr>
-                            <td>Sound-Syncing Color LEDs</td>
-                            <td>The Sound-Syncing Color LED lights is a system that takes the ambient sounds as an input, and outputs a visual, colorful representation of the given sound. I chose this for the Kinetic Art prompt because music and visual arts are two of the most pervasive art forms, and I wanted to apply Mechatronics and Signals Processing concepts to connect them.</td>
-                            <td><a href="projects/sound_leds/MAE 3780 Final Report.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Cornell University, FA20, MAE 3780 Final</a></td>
-                          </tr>
-                          <tr>
-                            <td>Internship 2020 - ZODAJ</td>
-                            <td>In the Summer of 2020, I did my internship at a startup called ZODAJ (http://www.zodaj-africa.com/#1) with students from Carnegie Mellon University and Stony Brook University to help develop part of a three-part system (Textbot, App, Website) to develop a contact-tracing system for COVID-19 in Senegal. I was on the website team, contributing to the development of the Hospital, Business and Government Portals.</td>
-                            <td><a href="projects/zodaj_internship/zodaj_monthly_newsletter_4.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Check out my newsletter feature!</a></td>
-                          </tr>
-                          <tr>
-                            <td>Identity Bias in ML Algorithms</td>
-                            <td>Michelle Davies & Shivali Halabe, ENGRC 3340, Fall 2020<br>Topic: What role do identity dynamics play in creating conditions for bias in learning algorithms?</td>
-                            <td><a href="https://sites.google.com/view/identity-bias-in-ml-algos/home?pli=1" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Check out our research paper!</a></td>
-                          </tr>
-                          <tr>
-                            <td>Voice to ASL & Morse Code</td>
-                            <td>About 600,000 people in the United States, and 466 million people worldwide, are medically diagnosed as deaf or otherwise hard-of-hearing according to the World Health Organization (WHO). During COVID-19, many deaf/hard-of-hearing students are struggling to have their Individualized Education Plans (IEP) met in the wake of online learning. There are many solutions being developed to make it easier for able-bodied individuals to communicate with deaf individuals. However, few solutions exist to ease the barrier of communication for deaf people. So, I decided to develop a Voice to ASL and Morse Code robotic hand to decode verbal speech to visual signals and representations to bridge this communicative gap on the other end.</td>
-                            <td><a href="projects/ASL_morse/VoicetoSLM.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">My project overview</a></td>
-                          </tr>
-                          <tr>
-                            <td>Death and Economic Growth - Data Science Project</td>
-                            <td>This was my final project for INFO 2950: Introduction to Data Science at Cornell University for Spring 2021.</td>
-                            <td><a href="projects/mdd94_info2950_SP21.zip" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View my project</a></td>
-                          </tr>
-                          <tr>
-                            <td>Intelligent Physical Systems Portfolio</td>
-                            <td>This page contains that work I produced for this course's lab/project components. You can find my full portfolio of projects and my professional pages here!</td>
-                            <td><a href="https://pages.github.coecis.cornell.edu/mdd94/mdd94.github.io/" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">My webpage</a><a href="https://classes.cornell.edu/browse/roster/SP21/class/ECE/3400" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Course Description</a></td>
-                          </tr>
-                          <tr>
-                            <td>Internet of Things: TCAT Project</td>
-                            <td>Cornell University, ECE 4950 SP21 Final Project <br>by Michelle D. Davies BSc ECE '22, Andrew Lin MEng ECE '21, and Kira Weinberg BSc MAE '22</td>
-                            <td><a href="projects/tcat/Final Design Report (May).pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View our report</a></td>
-                          </tr>
-                          <tr>
-                            <td>Evolutionary Algorithms: Monte Carlo python class</td>
-                            <td>Cornell University, ECE 4271 SP21 Programming Project <br>by Michelle D. Davies '22 <br>This is a Python class library designed to create simulations in Evolutionary Algorthims and game theory.</td>
-                            <td><a href="projects/evolutionary-algorithms/mdd94_Monte_Carlo.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View my project</a>
-                            <a href="https://gitfront.io/r/user-1596307/xBxdwzduqU37/evolutionary-algos/blob/evog_algorithms.py" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">mdd94_monte_carlo.py (hosted on Cornell Github)</a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>IoT Food Management System</td>
-                            <td>By Michelle Davies '22 and Myles Cherebin '22<br>For our project in ECE 5725: Embedded Operating Systems, we opted to build an IoT food management system that keeps track of the quality and freshness of stored foods based on the food itself and the ambient conditions of the storage environment. Based on these parameters, our system indicates, with LEDs, the status of our environment and food, provides an estimated shelf life timeline, and web scrapes the internet for recipe ideas for the stored foods. The goal of this system was to help users better manage their food inventory and plan their meals according to how fresh their groceries are, thereby reducing food waste.<br>Our objectives for implementing this system were to: (1) scan or otherwise detect and recognize the freshness of the food in storage; (2) use such recognition data from (1) to predict its shelf life based on the food while factoring in the temperature, and humidity of the storage environment; and (3) use the data from (2) to suggest popular recipes (using web scraping in Python) which feature those products. After a lengthy development process over the past few weeks, we created a prototype and demonstration which models the functionality of these various aspects of our system.</td>
-                            <td><a href="https://courses.ece.cornell.edu/ece5990/ECE5725_Spring2022_Projects/Monday%20May%2023/Food%20Freshness/Wednesday_mdd94_mac497/index.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View our report</a></td>
-                          </tr>
-                          <tr>
-                            <td>Developing an ODFM-OOK Communication System</td>
-                            <td>By Michelle Davies '22<br>This was the lab report that I wrote for my Senior Design class for the Signals Processing/Communications Engineering concentration for my ECE degree.</td>
-                            <td><a href="projects/communication_system/Report_mdd94_lab4.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View my lab report</a></td>
-                          </tr>
-                          <tr>
-                            <td>Applications of 5G Cellular Communication Systems in optimizing the use of the Internet of Things (“IoT”) in Healthcare Systems</td>
-                            <td>By Michelle Davies '22<br>This was the final research paper that I wrote for my graduate level Cellular Communications class during my senior year, for the Signals Processing/Communications Engineering concentration for my ECE degree.</td>
-                            <td><a href="projects/communication_system/Final_Research_Paper_mdd94.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View my class research paper</a></td>
-                          </tr>
-                          <tr>
-                            <td>Can't find Operating System Libraries required for Information Server 11.7.1.2 installation</td>
-                            <td>I wrote a technical article during my 2021 co-op that troubleshoots setting up a Red Hat Enterprise Linux ("RHEL") 8 environment with the prerequisite libraries to use the IBM InfoSphere Information Server V11.7.1.2 product.</td>
-                            <td><a href="https://www.ibm.com/support/pages/cant-find-operating-system-libraries-required-information-server-11712-installation" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View my article</a><a href="projects/ibm_article_mdd.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">PDF Version</a></td>
-                          </tr>
-                          <tr>
-                            <td>College Data Profiling Project (Jan 2023)</td>
-                            <td>I worked on this notebook where I practiced making regression and classifier models.</td>
-                            <td><a href="https://nbviewer.org/github/michelleddavies/practice-work/blob/main/college_data_project_ML.ipynb?flush_cache=True" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View my notebook</a></td>
-                          </tr>
-                          <tr>
-                            <td>Graduation Roadmap (Mar 2023)</td>
-                            <td>To start this ReactJS project (Graduation Roadmap), I followed a tutorial on YouTube to create the basic framework. <br> Sources: <br> <ol> <li><a href=https://www.youtube.com/watch?v=W0Uf_xu350k>Youtube Tutorial</a></li> <li><a href=https://github.com/ShaifArfan/react-todo-app>Source Code</a></li></ol> I modified the project by adding a few elements that increase the complexity so that I can challenge myself a bit more. <br>Changes: <br> <ol><li>I added a second filter by category option for the type of tasks. So, in my version, I am dealing with multi-filtering challenges with the todo items.</li><li>I added a third status: help. I integrated OpenAI's davinci model into my Todo Items so that when a user changes the status of an item to "Need Help - Suggest Next Steps", the OpenAI API provides the user with some advice on how to approach the task. This advice is only visible when a item is set to this status.</li></ol>For the second change, training the model to get more straight-forward advice may take time, but this feature is functional for all intents and purposes.<br>This was a great way to learn more about building a ReactJS app, and using the OpenAI API.</td>
-                            <td><a href="projects/todo_app/todo_demo.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Click here to view the project</a></td>
-                          </tr>
-                          <tr>
-                            <td>Performing a Competitive Analysis of Spam Call Detection Algorithms (Mar 2023)</td>
-                            <td>I wrote an independent research paper in which I analyze the filtering techniques of telecommunication agencies and technology partners, and then build and evalute my own Spam Call filtering system based on the commonly used techniques.</td>
-                            <td><a href="projects/spam-calls/MDD_Research2023_Spam.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Click here to view my report</a><a href="projects/spam-calls/MDD_Research2023_Spam_OnePager.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Click here to view the one-page version</a></td>
-                          </tr>
-                          <tr>
-                            <td>Reidentification Project (July 2024)</td>
-                            <td>I made a python notebook that takes any public dataset and then analyzes and calculates it's k-anonymity, l-diversity and t-closeness using my own implementation of Pandas and Numpy functions. This will allow for analysis of the anonymity of the given data.</td>
-                            <td><a href="projects/Reidentification-Project.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View my project</a></td> 
-                          </tr>
-                          <tr>
-                            <td>Visualizing the MPI, Early Marriage and Early Births Datasets on an Interactive Map (July-August 2024)</td>
-                            <td>For a group final project in DATASCI 200 at UC Berkeley, I created an interactive map of our combined data using Python's Folium library. The markers have a color key to indicate a high or low MPI, and then the markers are clickable. In the resuting pop up windows, there is additional information about the data collection from the footnotes and tables and graphs of the data itself.</td>
-                            <td>
-                                <a href="https://uc-berkeley-i-school.github.io/mids-datasci200-su24-section1-project2-group2/MPI.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">View the map</a>
-                                <a href="https://github.com/UC-Berkeley-I-School/mids-datasci200-summer24-Chelle-Davies/blob/main/Project%202/MPI_Data_Visualization.ipynb" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Notebook (Internal Link)</a>
-                            </td> 
-                          </tr>
-                          <tr>
-                            <td>Acme Gourmet Meals (AGM) Business Case Scenario</td>
-                            <td>For a group final project in DATASCI 205 at UC Berkeley, I developed and implemented a Neo4j PageRank algorithm to analyze delivery network optimization, enhanced machine learning models and feature engineering for logistics insights, and created a comprehensive presentation deck showcasing the business use cases of Neo4j, MongoDB, and Redis aligned with AGM's vision for expanding pickup locations, leveraging BART logistics, and integrating drones and robots.</td>
-                            <td>
-                                <a href="projects/mids_205/bart_station_connectivity_graph.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">BART PageRank Connectivity Graph</a>
-                                <a href="projects/mids_205/neo4j_pagerank_v1.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Code for BART PageRank Connectivity Graph</a>  
-                                <a href="projects/mids_205/fe_ml_enhancement_Chelle.html" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Machine Learning and Feature Engineering Enhancements</a> 
-                            </td> 
-                          </tr>
-                          <tr>
-                            <td>How effective are non-Linear Regression Models at Predicting Housing Prices?</td>
-                            <td>This project focuses on building a regression model to predict house prices using property attributes like size and age, as well as neighborhood and economic factors. Traditional methods often miss complex, non-linear relationships, so we use data-driven techniques, including exploratory data analysis and feature engineering, to improve accuracy and identify key drivers of housing prices.</td>
-                            <td>
-                                <a href="projects/mids_207/207.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Presentation Deck</a>
-                            </td> 
-                          </tr>
-                          <tr>
-                            <td>Getting Kickstarted with Kickstarter</td>
-                            <td>This project focuses on helping project creators on Kickstarter to optimize their campaign strategies for maximum success.</td>
-                            <td>
-                                <a href="https://uc-berkeley-i-school.github.io/mids-datasci209-fall24-kickstarter/" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Dashboard - V1</a>
-                                <a href="https://apps.ischool.berkeley.edu/ds209_kickstarterfinalproject/" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Dashboard - Final</a>
-                                <a href="projects/mids_209/Final Report - Kickstarter.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Presentation Deck</a>
-                                <a href="https://www.linkedin.com/posts/makahmad_ucberkeley-datascience-datavisualization-activity-7273005745489481729-iPVj?utm_source=share&utm_medium=member_desktop" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Professor's Post</a>
-                            </td> 
-                          </tr>
-                          <tr>
-                            <td>Machine Learning Systems Engineering: Deploying an API</td>
-                            <td>For a semester-long project in DATASCI 255 at UC Berkeley, I developed, implemented and load tested APIs for a pair of prediction models. This FastAPI-based web service provides a machine learning inference endpoint along with health checks and personalized greetings. It demonstrates data model validation, request handling, scikit-learn model integration, caching with Redis, and deployment on Kubernetes and Amazon Web Services (ECR, EKS, etc).</td>
-                            <td>
-                                <a href="https://chelle-davies.mids255.com/lab/docs" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Deployed API - Documentation (Lab - Live)</a>
-                                <a href="https://chelle-davies.mids255.com/project/docs" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Deployed API - Documentation (Project - Live)</a>
-                                <a href="projects/mids_255/api-documentation-255.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Deployed API - Documentation (PDF)</a>
-                                <a href="projects/mids_255/project-documentation-255.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Deployed Project - Documentation (PDF)</a>
-                                <a href="projects/mids_255/load-testing-255.pdf" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Load Testing Documentation</a>
-                            </td> 
-                          </tr>
-                          <tr>
-                            <td>Context-Enriched Named Entity Recognition (NER) for Identifying Emerging Trends in Video Comments</td>
-                            <td>
-                                <p>UC Berkeley MIDS Program - Spring 2025, DATASCI 266 (NLP)</p>
-                                <br>
-                                <p>In this project, the goal is to enhance Named Entity Recognition (NER) by incorporating contextual information from video comments. We will explore the impact of context on NER performance and develop a model that leverages this information to improve entity recognition accuracy.</p>
-                            </td>
-                            <td>
-                                <a href="https://www.ischool.berkeley.edu/projects/2025/context-enriched-named-entity-recognition-ner-identifying-emerging-trends-video" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Read Me</a>
-                            </td> 
-                          </tr>
-                          <tr>
-                            <td>RealPage Rent Impact</td>
-                            <td>Capstone Project - Spring 2025, Final Graduation Requirement for MIDS: This project investigates collusive patterns within RealPage's ecosystem, leveraging data analytics to uncover hidden trends and anomalies in property management.</td>
-                            <td>
-                                <a href="https://www.ischool.berkeley.edu/projects/2025/investigation-alleged-rental-price-fixing-algorithmic-collusion-realpage-and-other" target="_blank" class="d-block mb-2 tm-text-primary tm-post-link">Dashboard</a>
-                            </td>
-                        </tr> 
-                        </table>
+                        <div class="position-relative">
+                            <!-- 🔽 Dropdown Selector -->
+                            <select id="cardSelector" class="form-select mb-4 mx-auto" style="max-width: 400px;" onchange="jumpToCard(this.value)">
+                                <!-- Options added by script -->
+                            </select>
+                            <!-- SCROLLABLE PORTFOLIO CARDS -->                          
+                            <div id="scroll-container" style="display: none;">
+                    
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">My Image Suite</h5>
+                                    <p class="card-text">When I was in high school doing IB Higher Level Computer Science, we had to do an Internal Assessment project where we build a project for a client with a problem. I decided to build a simple photo-editing software for a friend of mine that was an IB Higher Level Art student, so that they count create their own photo-color filters in Obamacon photo style, but they can choose four colors to define the photo with. This project was done entirely in Python, from the photo-editing to the GUI that it is hosted in.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/my_image_suite/Development_of_misProduct.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Product Development Plan</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Mano816</h5>
+                                    <p class="card-text">To allow for more mobility for amputees we created a robotic hand that mimics the movement of the other hand. This will enable the user to do simple tasks like hold a cup or open a door. We noticed that many of the hands that were created did not have a way to save and replay their motions. So in the future we plan on making this function. Also buying a functional prosthetic arm is really expensive so with our project we are hoping that we will be able to make buying prosthetics more cost effective.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/mano816/mano816.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Mano816 project detials</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Customizable Morse Code</h5>
+                                    <p class="card-text">Inspired by a beginner's project from Girls Who Code, I decided to try to make a morse code machine that takes text input and outputs the corresponding more code signal for the entire phrase via the LED lights. There were many design considerations I made for this, like having dots and dashes appear on two different sets is lights to made them clear and distinguishable, thus improving readability. Overall, this project has been successful. When I have a greater budget and the necessary materials, I see myself upgrading this project by attempting to make a remote connection to the Arduino so that it does not have to be connected to work, and by mobilizing it so that it can "auto-deliver" any message to my family in these times of social distancing, Granted, I may need a sound component in case something happens to the circuit of lights or the message can't be interpreted for another reason.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/morse_code/morse_code.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Morse Code</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">The Mood Lights Project</h5>
+                                    <p class="card-text">This is a project that I particularly enjoyed because it ties my love of graphic design and art and colors with my love of circuits and robots. In this project, I display colors both in RGB LEDs and in terns of it's constituent R, G, and B values. This project has opened up opportunities for me to explore and analyze the random function, and system/computer colors as a whole. Check out the gallery and documentation to find out more about my final result! [UPDATE: I added a connection between this project and the My Image Suite Python script (see Projects > My Image Suite) by adding functionality so that I can display the RGB values of a selected photo's pixels through the board. The method for parsing the image is similar to this, with the added step of importing a photo in Arduino and the syntax for parsing the list of pixels].</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/mood_lights/Documentation_ColorLights.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Color Lights Development Plan</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Reaction Time Game</h5>
+                                    <p class="card-text">For one of my undergrad classes at Cornell (ECE 2300, Digital Logic and Computer Organization), we had to make a game that tests two players' reaction times. The way it works is that there are five rounds where, once each round starts, the first player to hit the button gets a point. The player that reaches 5 points first wins! But beware, if one player cheats by trying to press the button early, the other player gets the point for that round. Check out my gallery to see it in action!</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/reaction_game_time/game.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Reaction Time Game Recap</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Cornell Media Guild Website</h5>
+                                    <p class="card-text">During my term as Web Director of WVBR-FM, I single-handedly re-designed & optimized the Cornell Media Guild Website for desktop, tablet and mobile. For this project, I utilized HTML, CSS, Javascript, and HTTP server connections, hosting server management and XML script.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/cmg/cornell_media_guild.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Cornell Media Guild Website images</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">WVBR FM Website</h5>
+                                    <p class="card-text">During my term as Web Director of WVBR-FM, I single-handedly redesigned and updated the WVBR Website. The main coding I did for this project were HTTP scripting and Javascript to add even more functionality to this Wix website.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/wvbr_fm/wvbr_website.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">WVBR-FM Website images</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Sound-Syncing Color LEDs</h5>
+                                    <p class="card-text">The Sound-Syncing Color LED lights is a system that takes the ambient sounds as an input, and outputs a visual, colorful representation of the given sound. I chose this for the Kinetic Art prompt because music and visual arts are two of the most pervasive art forms, and I wanted to apply Mechatronics and Signals Processing concepts to connect them.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/sound_leds/MAE 3780 Final Report.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Cornell University, FA20, MAE 3780 Final</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Internship 2020 - ZODAJ</h5>
+                                    <p class="card-text">In the Summer of 2020, I did my internship at a startup called ZODAJ (http://www.zodaj-africa.com/#1) with students from Carnegie Mellon University and Stony Brook University to help develop part of a three-part system (Textbot, App, Website) to develop a contact-tracing system for COVID-19 in Senegal. I was on the website team, contributing to the development of the Hospital, Business and Government Portals.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/zodaj_internship/zodaj_monthly_newsletter_4.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Check out my newsletter feature!</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Identity Bias in ML Algorithms</h5>
+                                    <p class="card-text">Michelle Davies & Shivali Halabe, ENGRC 3340, Fall 2020<br>Topic: What role do identity dynamics play in creating conditions for bias in learning algorithms?</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="https://sites.google.com/view/identity-bias-in-ml-algos/home?pli=1" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Check out our research paper!</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Voice to ASL & Morse Code</h5>
+                                    <p class="card-text">About 600,000 people in the United States, and 466 million people worldwide, are medically diagnosed as deaf or otherwise hard-of-hearing according to the World Health Organization (WHO). During COVID-19, many deaf/hard-of-hearing students are struggling to have their Individualized Education Plans (IEP) met in the wake of online learning. There are many solutions being developed to make it easier for able-bodied individuals to communicate with deaf individuals. However, few solutions exist to ease the barrier of communication for deaf people. So, I decided to develop a Voice to ASL and Morse Code robotic hand to decode verbal speech to visual signals and representations to bridge this communicative gap on the other end.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/ASL_morse/VoicetoSLM.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">My project overview</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Death and Economic Growth - Data Science Project</h5>
+                                    <p class="card-text">This was my final project for INFO 2950: Introduction to Data Science at Cornell University for Spring 2021.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/mdd94_info2950_SP21.zip" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View my project</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Intelligent Physical Systems Portfolio</h5>
+                                    <p class="card-text">This page contains that work I produced for this course's lab/project components. You can find my full portfolio of projects and my professional pages here!</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="https://pages.github.coecis.cornell.edu/mdd94/mdd94.github.io/" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">My webpage</a><a href="https://classes.cornell.edu/browse/roster/SP21/class/ECE/3400" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Course Description</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Internet of Things: TCAT Project</h5>
+                                    <p class="card-text">Cornell University, ECE 4950 SP21 Final Project <br>by Michelle D. Davies BSc ECE '22, Andrew Lin MEng ECE '21, and Kira Weinberg BSc MAE '22</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/tcat/Final Design Report (May).pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View our report</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Evolutionary Algorithms: Monte Carlo python class</h5>
+                                    <p class="card-text">Cornell University, ECE 4271 SP21 Programming Project <br>by Michelle D. Davies '22 <br>This is a Python class library designed to create simulations in Evolutionary Algorthims and game theory.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/evolutionary-algorithms/mdd94_Monte_Carlo.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View my project</a>
+                                    <a href="https://gitfront.io/r/user-1596307/xBxdwzduqU37/evolutionary-algos/blob/evog_algorithms.py" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">mdd94_monte_carlo.py (hosted on Cornell Github)</a>
+                                    </div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">IoT Food Management System</h5>
+                                    <p class="card-text">By Michelle Davies '22 and Myles Cherebin '22<br>For our project in ECE 5725: Embedded Operating Systems, we opted to build an IoT food management system that keeps track of the quality and freshness of stored foods based on the food itself and the ambient conditions of the storage environment. Based on these parameters, our system indicates, with LEDs, the status of our environment and food, provides an estimated shelf life timeline, and web scrapes the internet for recipe ideas for the stored foods. The goal of this system was to help users better manage their food inventory and plan their meals according to how fresh their groceries are, thereby reducing food waste.<br>Our objectives for implementing this system were to: (1) scan or otherwise detect and recognize the freshness of the food in storage; (2) use such recognition data from (1) to predict its shelf life based on the food while factoring in the temperature, and humidity of the storage environment; and (3) use the data from (2) to suggest popular recipes (using web scraping in Python) which feature those products. After a lengthy development process over the past few weeks, we created a prototype and demonstration which models the functionality of these various aspects of our system.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="https://courses.ece.cornell.edu/ece5990/ECE5725_Spring2022_Projects/Monday%20May%2023/Food%20Freshness/Wednesday_mdd94_mac497/index.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View our report</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Developing an ODFM-OOK Communication System</h5>
+                                    <p class="card-text">By Michelle Davies '22<br>This was the lab report that I wrote for my Senior Design class for the Signals Processing/Communications Engineering concentration for my ECE degree.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/communication_system/Report_mdd94_lab4.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View my lab report</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Applications of 5G Cellular Communication Systems in optimizing the use of the Internet of Things (“IoT”) in Healthcare Systems</h5>
+                                    <p class="card-text">By Michelle Davies '22<br>This was the final research paper that I wrote for my graduate level Cellular Communications class during my senior year, for the Signals Processing/Communications Engineering concentration for my ECE degree.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/communication_system/Final_Research_Paper_mdd94.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View my class research paper</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Can't find Operating System Libraries required for Information Server 11.7.1.2 installation</h5>
+                                    <p class="card-text">I wrote a technical article during my 2021 co-op that troubleshoots setting up a Red Hat Enterprise Linux ("RHEL") 8 environment with the prerequisite libraries to use the IBM InfoSphere Information Server V11.7.1.2 product.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="https://www.ibm.com/support/pages/cant-find-operating-system-libraries-required-information-server-11712-installation" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View my article</a><a href="projects/ibm_article_mdd.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">PDF Version</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">College Data Profiling Project (Jan 2023)</h5>
+                                    <p class="card-text">I worked on this notebook where I practiced making regression and classifier models.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="https://nbviewer.org/github/michelleddavies/practice-work/blob/main/college_data_project_ML.ipynb?flush_cache=True" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View my notebook</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Graduation Roadmap (Mar 2023)</h5>
+                                    <p class="card-text">To start this ReactJS project (Graduation Roadmap), I followed a tutorial on YouTube to create the basic framework. <br> Sources: <br> <ol> <li><a href=https://www.youtube.com/watch?v=W0Uf_xu350k>Youtube Tutorial</a></li> <li><a href=https://github.com/ShaifArfan/react-todo-app>Source Code</a></li></ol> I modified the project by adding a few elements that increase the complexity so that I can challenge myself a bit more. <br>Changes: <br> <ol><li>I added a second filter by category option for the type of tasks. So, in my version, I am dealing with multi-filtering challenges with the todo items.</li><li>I added a third status: help. I integrated OpenAI's davinci model into my Todo Items so that when a user changes the status of an item to "Need Help - Suggest Next Steps", the OpenAI API provides the user with some advice on how to approach the task. This advice is only visible when a item is set to this status.</li></ol>For the second change, training the model to get more straight-forward advice may take time, but this feature is functional for all intents and purposes.<br>This was a great way to learn more about building a ReactJS app, and using the OpenAI API.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/todo_app/todo_demo.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Click here to view the project</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Performing a Competitive Analysis of Spam Call Detection Algorithms (Mar 2023)</h5>
+                                    <p class="card-text">I wrote an independent research paper in which I analyze the filtering techniques of telecommunication agencies and technology partners, and then build and evalute my own Spam Call filtering system based on the commonly used techniques.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/spam-calls/MDD_Research2023_Spam.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Click here to view my report</a><a href="projects/spam-calls/MDD_Research2023_Spam_OnePager.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Click here to view the one-page version</a></div></div></div> <!-- closes card-body, card, col -->
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Reidentification Project (July 2024)</h5>
+                                    <p class="card-text">I made a python notebook that takes any public dataset and then analyzes and calculates it's k-anonymity, l-diversity and t-closeness using my own implementation of Pandas and Numpy functions. This will allow for analysis of the anonymity of the given data.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center"><a href="projects/Reidentification-Project.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View my project</a></div></div></div> <!-- closes card-body, card, col --> 
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Visualizing the MPI, Early Marriage and Early Births Datasets on an Interactive Map (July-August 2024)</h5>
+                                    <p class="card-text">For a group final project in DATASCI 200 at UC Berkeley, I created an interactive map of our combined data using Python's Folium library. The markers have a color key to indicate a high or low MPI, and then the markers are clickable. In the resuting pop up windows, there is additional information about the data collection from the footnotes and tables and graphs of the data itself.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                                        <a href="https://uc-berkeley-i-school.github.io/mids-datasci200-su24-section1-project2-group2/MPI.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">View the map</a>
+                                        <a href="https://github.com/UC-Berkeley-I-School/mids-datasci200-summer24-Chelle-Davies/blob/main/Project%202/MPI_Data_Visualization.ipynb" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Notebook (Internal Link)</a>
+                                    </div></div></div> <!-- closes card-body, card, col --> 
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Acme Gourmet Meals (AGM) Business Case Scenario</h5>
+                                    <p class="card-text">For a group final project in DATASCI 205 at UC Berkeley, I developed and implemented a Neo4j PageRank algorithm to analyze delivery network optimization, enhanced machine learning models and feature engineering for logistics insights, and created a comprehensive presentation deck showcasing the business use cases of Neo4j, MongoDB, and Redis aligned with AGM's vision for expanding pickup locations, leveraging BART logistics, and integrating drones and robots.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                                        <a href="projects/mids_205/bart_station_connectivity_graph.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">BART PageRank Connectivity Graph</a>
+                                        <a href="projects/mids_205/neo4j_pagerank_v1.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Code for BART PageRank Connectivity Graph</a>  
+                                        <a href="projects/mids_205/fe_ml_enhancement_Chelle.html" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Machine Learning and Feature Engineering Enhancements</a> 
+                                    </div></div></div> <!-- closes card-body, card, col --> 
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">How effective are non-Linear Regression Models at Predicting Housing Prices?</h5>
+                                    <p class="card-text">This project focuses on building a regression model to predict house prices using property attributes like size and age, as well as neighborhood and economic factors. Traditional methods often miss complex, non-linear relationships, so we use data-driven techniques, including exploratory data analysis and feature engineering, to improve accuracy and identify key drivers of housing prices.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                                        <a href="projects/mids_207/207.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Presentation Deck</a>
+                                    </div></div></div> <!-- closes card-body, card, col --> 
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Getting Kickstarted with Kickstarter</h5>
+                                    <p class="card-text">This project focuses on helping project creators on Kickstarter to optimize their campaign strategies for maximum success.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                                        <a href="https://uc-berkeley-i-school.github.io/mids-datasci209-fall24-kickstarter/" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Dashboard - V1</a>
+                                        <a href="https://apps.ischool.berkeley.edu/ds209_kickstarterfinalproject/" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Dashboard - Final</a>
+                                        <a href="projects/mids_209/Final Report - Kickstarter.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Presentation Deck</a>
+                                        <a href="https://www.linkedin.com/posts/makahmad_ucberkeley-datascience-datavisualization-activity-7273005745489481729-iPVj?utm_source=share&utm_medium=member_desktop" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Professor's Post</a>
+                                    </div></div></div> <!-- closes card-body, card, col --> 
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Machine Learning Systems Engineering: Deploying an API</h5>
+                                    <p class="card-text">For a semester-long project in DATASCI 255 at UC Berkeley, I developed, implemented and load tested APIs for a pair of prediction models. This FastAPI-based web service provides a machine learning inference endpoint along with health checks and personalized greetings. It demonstrates data model validation, request handling, scikit-learn model integration, caching with Redis, and deployment on Kubernetes and Amazon Web Services (ECR, EKS, etc).</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                                        <a href="https://chelle-davies.mids255.com/lab/docs" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Deployed API - Documentation (Lab - Live)</a>
+                                        <a href="https://chelle-davies.mids255.com/project/docs" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Deployed API - Documentation (Project - Live)</a>
+                                        <a href="projects/mids_255/api-documentation-255.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Deployed API - Documentation (PDF)</a>
+                                        <a href="projects/mids_255/project-documentation-255.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Deployed Project - Documentation (PDF)</a>
+                                        <a href="projects/mids_255/load-testing-255.pdf" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Load Testing Documentation</a>
+                                    </div></div></div> <!-- closes card-body, card, col --> 
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">Context-Enriched Named Entity Recognition (NER) for Identifying Emerging Trends in Video Comments</h5>
+                                    <p class="card-text">
+                                        <p>UC Berkeley MIDS Program - Spring 2025, DATASCI 266 (NLP)</p>
+                                        <br>
+                                        <p>In this project, the goal is to enhance Named Entity Recognition (NER) by incorporating contextual information from video comments. We will explore the impact of context on NER performance and develop a model that leverages this information to improve entity recognition accuracy.</p>
+                                    </p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                                        <a href="https://www.ischool.berkeley.edu/projects/2025/context-enriched-named-entity-recognition-ner-identifying-emerging-trends-video" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Read Me</a>
+                                    </div></div></div> <!-- closes card-body, card, col --> 
+                                
+                                <div class="card shadow-sm" style="min-width: 350px; max-width: 500px; height: 520px;"><div class="card-body">
+                                    <h5 class="card-title">RealPage Rent Impact</h5>
+                                    <p class="card-text">Capstone Project - Spring 2025, Final Graduation Requirement for MIDS: This project investigates collusive patterns within RealPage's ecosystem, leveraging data analytics to uncover hidden trends and anomalies in property management.</p>
+                                    <div class="card-footer bg-transparent border-0 d-flex justify-content-center">
+                                        <a href="https://www.ischool.berkeley.edu/projects/2025/investigation-alleged-rental-price-fixing-algorithmic-collusion-realpage-and-other" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Dashboard</a>
+                                    </div></div></div> <!-- closes card-body, card, col -->
+                                
+                            </div>
+                            <div class="position-relative">
+                                <button class="scroll-btn left" onclick="changeCard(-1)">&#8678;</button>
+                                <button class="scroll-btn right" onclick="changeCard(1)">&#8680;</button>
+                                <div id="card-display" class="d-flex justify-content-center align-items-center" style="min-height: 550px;">
+                                  <!-- Current card will be shown here -->
+                                </div>
+                            </div>
+                        </div>                     
                     </section>
                 </div>
                 <!-- About section -->
                 <div class="tm-section-wrap">
                     <div class="tm-parallax" data-parallax="scroll" data-image-src="img/img-02.jpeg"></div>
                     <section id="about" class="tm-section">
-                        <h2 class="tm-text-primary">About & CV</h2>
+                        <h2 class="tm-text-primary">About Me</h2>
                         <hr class="mb-5">
-                        
-                        <div class="row tm-row-about">
-                            <div class="tm-col-about tm-col-about-l">
-                                <p class="mb-4">
-                            I'm looking for more opportunities to do more research and project work with Machine Learning and Natural Language Processing projects. I'm looking for applications-based work in the public sector (education, healthcare, or transportation) and/or social media. </p>
-                                <p class="mb-4">
-                                    <b>Education</b><br>
-                                    University of California, Berkeley <br> <i>Master of Information & Data Science (MIDS)</i> <br> 2025 <br><br>
-                                    Cornell University, College of Engineering <br> <i>Bachelor of Science - Electrical and Computer Engineering</i> <br> 2022 <br><br>
-                                    MITx <br> <i>MicroMasters - Statistics and Data Science</i> <br> November 2023
-                                </p>
-                                <p>
-                                    <p><a href="/MDD_Resume.pdf" target="_blank" class="btn btn-primary tm-btn-next">View my CV</a></p>
-                                    <p><a href="https://www.linkedin.com/in/michelle-dominique-davies/" target="_blank" class="btn btn-primary tm-btn-next">View my LinkedIn</a></p>
-                                </p>
-                            </div>
-                            <div class="tm-col-about tm-col-about-r">
-                                <img src="img/img-about-01.jpeg" alt="Image" class="img-fluid mb-5 tm-img-about">
-                                <p>
-                                    <b>Most Recent Job Experience</b><br>
-                                    IBM <br> <i>Senior Data Engineer - Machine Learning</i> <br> <i>BPM Application Developer - Automation</i> <br> April 2024 - Present
-                                </p>
-                            </div>
+                        <div class="row">
+                          <div class="col-md-7 mb-4">
+                            <p>I’m passionate about building intelligent systems that elevate everyday life. My interests lie in machine learning, data engineering, and public impact tech — especially in education, healthcare, and accessibility.</p>
+                            <br>
+                            <h5 style="text-align: center;">Education</h5>
+                            <p style="text-align: center;">
+                              UC Berkeley – Master of Information & Data Science (MIDS), 2025<br>
+                              Cornell University – BSc Electrical & Computer Engineering, 2022<br>
+                              MITx – MicroMasters in Stats & Data Science, 2023
+                            </p>
+                            <br>
+                            <a href="/MDD_Resume.pdf" target="_blank" class="btn btn-primary btn-sm mb-2">Download My CV</a>
+                            <a href="https://www.linkedin.com/in/michelle-dominique-davies/" target="_blank" class="btn btn-outline-dark btn-sm fw-semibold px-4">Connect on LinkedIn</a>
+                          </div>
+                          <div class="col-md-5 text-center">
+                            <img src="img/img-about-01.jpeg" alt="Michelle Davies" class="img-fluid rounded mb-3">
+                            <h5>Current Role</h5>
+                            <p>
+                                IBM – Senior Data Engineer, Machine Learning<br>
+                                BPM Application Developer – Automation<br>
+                                <em>Since April 2024</em>
+                            </p>
+                          </div>
                         </div>
-                    </section>
+                      </section>                      
                 </div>
 
                 <!-- Contact section -->
@@ -471,5 +569,86 @@ https://templatemo.com/tm-555-upright
     <script src="js/jquery.magnific-popup.min.js"></script> <!-- https://dimsemenov.com/plugins/magnific-popup/ -->
     <script src="slick/slick.min.js"></script>              <!-- https://kenwheeler.github.io/slick/ -->
     <script src="js/templatemo-script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+        
+          function getOffsetTop(elem) {
+            let offsetTop = 0;
+            while (elem) {
+              offsetTop += elem.offsetTop;
+              elem = elem.offsetParent;
+            }
+            return offsetTop;
+          }
+        
+          function updateActiveSection() {
+            let fromTop = window.scrollY + 120;
+        
+            navLinks.forEach(link => {
+              const sectionId = link.getAttribute("href").substring(1);
+              const section = document.getElementById(sectionId);
+        
+              if (section) {
+                const sectionTop = getOffsetTop(section);
+                const sectionBottom = sectionTop + section.offsetHeight;
+        
+                if (fromTop >= sectionTop && fromTop < sectionBottom) {
+                  navLinks.forEach(l => l.classList.remove("active"));
+                  link.classList.add("active");
+                }
+              }
+            });
+          }
+        
+          window.addEventListener("scroll", updateActiveSection);
+          window.addEventListener("resize", updateActiveSection);
+          updateActiveSection(); // run once on load
+        
+          // Also make nav click update immediately
+          navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+              navLinks.forEach(l => l.classList.remove("active"));
+              link.classList.add("active");
+            });
+          });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const cards = Array.from(document.querySelectorAll('#scroll-container .card'));
+          const display = document.getElementById('card-display');
+          const selector = document.getElementById('cardSelector');
+      
+          let currentIndex = 0;
+      
+          function showCard(index) {
+            display.innerHTML = '';
+            display.appendChild(cards[index].cloneNode(true));
+            selector.value = index;
+          }
+      
+          window.changeCard = function (direction) {
+            currentIndex = (currentIndex + direction + cards.length) % cards.length;
+            showCard(currentIndex);
+          };
+      
+          window.jumpToCard = function (index) {
+            currentIndex = parseInt(index);
+            showCard(currentIndex);
+          };
+      
+          // Build dropdown
+          cards.forEach((card, i) => {
+            const title = card.querySelector('.card-title')?.innerText || `Project ${i + 1}`;
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = title;
+            selector.appendChild(option);
+          });
+      
+          showCard(currentIndex); // Show first card on load
+        });
+      </script>             
 </body>
 </html> 
