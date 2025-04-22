@@ -274,6 +274,18 @@
             margin: 0;
         }
 
+        /* 🔁 Featured project grouping */
+        .featured-set {
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #e0e0e0; /* light divider for clarity */
+        }
+
+        .featured-set:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
       </style>      
 <!--
     
@@ -310,6 +322,7 @@ https://templatemo.com/tm-555-upright
                 <div class="sidebar-inner">
                   <div class="featured-project">
                     <h6>Featured Project</h6>
+                    <hr class="mb-3">
                     <div id="random-project"></div>
                   </div>
                 </div>
@@ -778,7 +791,7 @@ https://templatemo.com/tm-555-upright
             {
               title: "NER for Video Comments",
               link: "https://www.ischool.berkeley.edu/projects/2025/context-enriched-named-entity-recognition-ner-identifying-emerging-trends-video",
-              description: "Enhances entity recognition by using comment context.",
+              description: "Enhances entity recognition using comment context.",
               date: "Spring 2025"
             },
             {
@@ -795,15 +808,23 @@ https://templatemo.com/tm-555-upright
             }
           ];
       
-          const random = projects[Math.floor(Math.random() * projects.length)];
-          const container = document.getElementById("random-project");
+          // Shuffle array
+          const shuffled = projects.sort(() => 0.5 - Math.random());
+          const selected = shuffled.slice(0, 3);
       
-          container.innerHTML = `
-            <a href="${random.link}" target="_blank">${random.title}</a>
-            <p class="project-description">${random.description}</p>
-            <p class="project-date">${random.date}</p>
-          `;
+          const container = document.getElementById("random-project");
+          container.innerHTML = selected
+            .map(
+              (p) => `
+              <div class="featured-set">
+                <a href="${p.link}" target="_blank">${p.title}</a>
+                <p class="project-description">${p.description}</p>
+                <p class="project-date">${p.date}</p>
+              </div>
+            `
+            )
+            .join("");
         });
-      </script>                    
+      </script>                        
 </body>
 </html> 
