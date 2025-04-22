@@ -286,6 +286,39 @@
             margin-bottom: 0;
         }
 
+        .tech-stack h6 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #041b31;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .tech-stack h6::before {
+            content: "🧰";
+            font-size: 1.2rem;
+            margin-right: 0.4rem;
+        }
+
+        .stack-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+        }
+
+        .stack-badges .badge {
+            background-color: #04347b;
+            color: white;
+            font-size: 0.75rem;
+            padding: 0.35em 0.6em;
+            border-radius: 4px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+        }
+
       </style>      
 <!--
     
@@ -324,6 +357,25 @@ https://templatemo.com/tm-555-upright
                     <h6>Featured Project</h6>
                     <hr class="mb-3">
                     <div id="random-project"></div>
+                    <hr class="mb-3">
+                    <div class="tech-stack mt-4">
+                        <h6>Tech Stack</h6>
+                        <div class="stack-badges">
+                          <span class="badge">Python</span>
+                          <span class="badge">SQL</span>
+                          <span class="badge">FastAPI</span>
+                          <span class="badge">Git</span>
+                          <span class="badge">Kubernetes</span>
+                          <span class="badge">Appian</span>
+                          <span class="badge">Azure</span>
+                          <span class="badge">DataStage</span>
+                          <span class="badge">AWS</span>
+                          <span class="badge">HTML</span>
+                          <span class="badge">CSS</span>
+                          <span class="badge">Javascript</span>
+                          <span class="badge">Java</span>
+                        </div>
+                      </div>                      
                   </div>
                 </div>
               </aside>              
