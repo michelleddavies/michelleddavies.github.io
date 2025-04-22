@@ -198,6 +198,82 @@
             color: #ffd700 !important; /* gold hover */
         }
 
+        /* Sidebar container */
+        #custom-sidebar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 260px;
+            height: calc(100vh - 70px);
+            background-color: whitesmoke;
+            color: #0d4463;
+            padding: 1.5rem;
+            z-index: 1000;
+            overflow-y: auto;
+            box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+            font-family: 'Kumbh Sans', sans-serif;
+        }
+
+        /* Inner wrapper */
+        .sidebar-inner {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            justify-content: flex-start;
+        }
+
+        /* Featured Project section */
+        .featured-project {
+            margin-top: 1rem;
+        }
+
+        .featured-project h6 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #041b31;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+
+        .featured-project h6::before {
+            content: "🎯";
+            display: inline-block;
+            font-size: 1.2rem;
+            margin-right: 0.4rem;
+        }
+
+        /* Random project link */
+        #random-project a {
+            display: block;
+            font-size: 1rem;
+            color: #04347b;
+            font-weight: 500;
+            text-decoration: none;
+            line-height: 1.4;
+            margin-bottom: 0.25rem;
+        }
+
+        #random-project a:hover {
+            text-decoration: underline;
+        }
+
+        .project-description {
+            font-size: 0.9rem;
+            color: #02062f;
+            margin: 0 0 0.25rem;
+            line-height: 1.4;
+        }
+
+        .project-date {
+            font-size: 0.8rem;
+            color: #010855;
+            font-style: italic;
+            margin: 0;
+        }
+
       </style>      
 <!--
     
@@ -230,6 +306,15 @@ https://templatemo.com/tm-555-upright
                 </div>
               </header>              
             
+              <aside id="custom-sidebar" class="d-none d-lg-block">
+                <div class="sidebar-inner">
+                  <div class="featured-project">
+                    <h6>Featured Project</h6>
+                    <div id="random-project"></div>
+                  </div>
+                </div>
+              </aside>              
+
             <div class="tm-main">
                 <!-- Home section -->
                 <div class="tm-section-wrap">
@@ -668,6 +753,57 @@ https://templatemo.com/tm-555-upright
       
           showCard(currentIndex); // Show first card on load
         });
-      </script>             
+      </script>     
+      <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const projects = [
+            {
+              title: "Mano816",
+              link: "projects/mano816/mano816.html",
+              description: "Robotic prosthetic hand that mirrors human motion.",
+              date: "Spring 2020"
+            },
+            {
+              title: "Voice to ASL & Morse Code",
+              link: "projects/ASL_morse/VoicetoSLM.pdf",
+              description: "Translates speech into visual signals using robotics.",
+              date: "Fall 2021"
+            },
+            {
+              title: "IoT Food Management",
+              link: "https://courses.ece.cornell.edu/ece5990/ECE5725_Spring2022_Projects/Monday%20May%2023/Food%20Freshness/Wednesday_mdd94_mac497/index.html",
+              description: "Tracks food freshness and suggests recipes.",
+              date: "Spring 2022"
+            },
+            {
+              title: "NER for Video Comments",
+              link: "https://www.ischool.berkeley.edu/projects/2025/context-enriched-named-entity-recognition-ner-identifying-emerging-trends-video",
+              description: "Enhances entity recognition by using comment context.",
+              date: "Spring 2025"
+            },
+            {
+              title: "Kickstarter Success Dashboard",
+              link: "https://uc-berkeley-i-school.github.io/mids-datasci209-fall24-kickstarter/",
+              description: "Dashboard to help creators optimize campaigns.",
+              date: "Fall 2024"
+            },
+            {
+              title: "RealPage Rent Impact",
+              link: "https://www.ischool.berkeley.edu/projects/2025/investigation-alleged-rental-price-fixing-algorithmic-collusion-realpage-and-other",
+              description: "Analyzes rental price patterns for collusion evidence.",
+              date: "Spring 2025"
+            }
+          ];
+      
+          const random = projects[Math.floor(Math.random() * projects.length)];
+          const container = document.getElementById("random-project");
+      
+          container.innerHTML = `
+            <a href="${random.link}" target="_blank">${random.title}</a>
+            <p class="project-description">${random.description}</p>
+            <p class="project-date">${random.date}</p>
+          `;
+        });
+      </script>                    
 </body>
 </html> 
