@@ -33,10 +33,50 @@
 
         .navbar .nav-link:hover,
         .navbar .nav-link.active {
-        color: #ffd700 !important; /* deep gold */
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 4px;
-        font-weight: bold;
+            color: #ffd700 !important; /* deep gold */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 991px) {
+            .navbar-toggler {
+                display: block !important;     /* force it visible */
+                position: absolute;
+                top: 15px;
+                right: 15px;                   /* move to top-right */
+                border: none;                  /* remove default outline */
+                background: none;              /* transparent background */
+            }
+
+            /* Customize the hamburger bars */
+            .navbar-toggler-icon {
+                background-image: none;        /* remove Bootstrap default */
+                width: 24px;
+                height: 2px;
+                background-color: #006699;     /* accent color */
+                position: relative;
+                display: inline-block;
+                margin-left: auto;        /* pushes bars to the right */
+            }
+
+            .navbar-toggler-icon::before,
+            .navbar-toggler-icon::after {
+                content: '';
+                position: absolute;
+                width: 24px;
+                height: 2px;
+                background-color: #006699;     /* same accent color */
+                left: 0;
+            }
+
+            .navbar-toggler-icon::before {
+                top: -7px;
+            }
+
+            .navbar-toggler-icon::after {
+                top: 7px;
+            }
         }
 
         .carousel .card {
