@@ -1,0 +1,5 @@
+id,hypothesis,population,feature,outcome,expected_direction
+H1,Higher mean combine acceleration is associated with more sacks per game.,"Defensive front: DE, OLB, DT, NT, ILB, MLB",combine_a_mean_mean,sacks_per_game,Positive
+H2,Greater combine acceleration variability is associated with more sacks per game.,"Defensive front: DE, OLB, DT, NT, ILB, MLB",combine_a_std_mean,sacks_per_game,Positive
+H3,Higher mean combine acceleration is associated with more receiving yards per game.,"WR, TE, RB, FB",combine_a_mean_mean,receiving_yards_per_game,Positive
+H4,Combine movement metrics improve held-out-year predictions beyond position and traditional combine results.,Evaluate separately by position group,Movement metrics vs. position/results baseline,Rookie-season performance,Better held-out prediction
